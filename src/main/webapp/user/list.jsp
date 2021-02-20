@@ -14,7 +14,6 @@
 <h1>User List</h1>
 <table style="border: black solid">
     <tr>
-        <td>Name</td>
         <td>Usernam</td>
         <td>Password</td>
         <td>Fullname</td>
@@ -23,15 +22,13 @@
     </tr>
     <tr>
         <c:forEach items="${list}" var="user">
-        <td>${user.getName()}</td>
+        <td>${user.getUsername()}</td>
         <td>${user.getPassword()}</td>
-        <td>${user.getCountry()}</td>
-        <td>${user.getCountry()}</td>
-        <td>${user.getCountry()}</td>
-        <td>${user.getCountry()}</td>
+        <td>${user.getFullname()}</td>
+        <td>${user.getBirthday()}</td>
+        <td>${user.getAddress()}</td>
     <tr/>
     </c:forEach>
-
 </table>
 </body>
 </html>
