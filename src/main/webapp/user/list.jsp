@@ -14,6 +14,7 @@
 <h1>User List</h1>
 <table style="border: black solid">
     <tr>
+        <td>Id</td>
         <td>Usernam</td>
         <td>Password</td>
         <td>Fullname</td>
@@ -22,6 +23,7 @@
     </tr>
     <tr>
         <c:forEach items="${list}" var="user">
+        <td>${user.getId}</td>
         <td>${user.getUsername()}</td>
         <td>${user.getPassword()}</td>
         <td>${user.getFullname()}</td>
