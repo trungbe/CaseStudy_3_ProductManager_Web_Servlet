@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Dat Bong
-  Date: 2/20/2021
-  Time: 5:02 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,18 +6,16 @@
 </head>
 <body>
 <h1>User List</h1>
-<table style="border: black solid">
+<table>
     <tr>
-        <td>Id</td>
-        <td>Usernam</td>
+        <td>Username</td>
         <td>Password</td>
         <td>Fullname</td>
         <td>Birthday</td>
         <td>Address</td>
     </tr>
+    <c:forEach items="${list}" var="user">
     <tr>
-        <c:forEach items="${list}" var="user">
-        <td>${user.getId}</td>
         <td>${user.getUsername()}</td>
         <td>${user.getPassword()}</td>
         <td>${user.getFullname()}</td>

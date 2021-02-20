@@ -9,17 +9,27 @@ public class User {
     private String fullname;
     private Date birthday;
     private String address;
+    private int id_role;
 
     public User() {
     }
 
-    public User(int id, String username, String password, String fullname, Date birthday, String address) {
+    public User(int id, String username, String password, String fullname, Date birthday, String address, int id_role) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.fullname = fullname;
         this.birthday = birthday;
         this.address = address;
+        this.id_role = id_role;
+    }
+
+    public int getId_role() {
+        return id_role;
+    }
+
+    public void setId_role(int id_role) {
+        this.id_role = id_role;
     }
 
     public int getId() {
