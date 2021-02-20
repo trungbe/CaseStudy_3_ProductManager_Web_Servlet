@@ -8,7 +8,7 @@
     <meta content="" name="author">
 
     <title>QUẢN LÍ BÁN HÀNG</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" />
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" />--%>
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -16,7 +16,7 @@
             rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/sb-admin-2.min.css" />
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/sb-admin-2.min.css" />--%>
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body id="page-top">
@@ -28,7 +28,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fab fa-phoenix-framework"></i>
             </div>
@@ -47,7 +47,7 @@
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="index.jsp">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
