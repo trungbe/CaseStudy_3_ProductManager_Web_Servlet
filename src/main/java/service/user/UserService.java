@@ -11,7 +11,8 @@ import java.util.List;
 
 public class UserService implements IUserService {
     public static final String LOGIN_SQL = "select * from user where username=? and password =?;";
-    public static final String CREATE_NEW_USER_SQL = "insert into user" + " (username,password,fullname,birthday,address) values" + "(?,?,?,?,?);";
+    public static final String CREATE_NEW_USER_SQL = "insert into user" + " (username,password,fullname,birthday,address,id_role) values" + "(?,?,?,?,?,?);";
+    public static final String CHECK_USER_EXIST_SQL = "select 1 from user where username = ?";
     private Connection connection = SingletonConnection.getConnection();
 
     @Override
@@ -21,21 +22,41 @@ public class UserService implements IUserService {
 
     @Override
     public User create(User user) {
-        try {
-            PreparedStatement p = connection.prepareStatement(CREATE_NEW_USER_SQL);
-            p.setString(1, user.getUsername());
-            p.setString(2, user.getPassword());
-            p.setString(3, user.getFullname());
-            p.setInt(4, user.getBirthday());
-            p.setString(5, user.getAddress());
-            //p.setInt(6, user.getId_role());
-            p.executeUpdate();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        if (duplicateUser(user)) {
+            return null;
+        } else {
+            try {
+                PreparedStatement p = connection.prepareStatement(CREATE_NEW_USER_SQL);
+                p.setString(1, user.getUsername());
+                p.setString(2, user.getPassword());
+                p.setString(3, user.getFullname());
+                p.setString(4, user.getBirthday());
+                p.setString(5, user.getAddress());
+                p.setInt(6, user.getId_role());
+                p.executeUpdate();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
+
         return user;
     }
 
+    private boolean duplicateUser(User user) {
+        boolean duplicateUser = false;
+        try {
+            PreparedStatement p = connection.prepareStatement(CHECK_USER_EXIST_SQL);
+            p.setString(1, user.getUsername());
+            ResultSet resultSet = p.executeQuery();
+            while (resultSet.next()) {
+                duplicateUser = true;
+            }
+            System.out.println(duplicateUser);
+        } catch (Exception e) {
+
+        }
+        return duplicateUser;
+    }
 
 
 //    public boolean login(User user) {
@@ -79,7 +100,7 @@ public class UserService implements IUserService {
 
     @Override
     public User login(String user, String pass) {
-        Connection connection =null;
+//        Connection connection = null;
         ResultSet resultSet;
 
         try {
@@ -87,9 +108,10 @@ public class UserService implements IUserService {
             p.setString(1, user);
             p.setString(2, pass);
             resultSet = p.executeQuery();
-            while (resultSet.next()){
-                User user1 = new User(resultSet.getString(1),resultSet.getString(2));
-            return user1;
+            while (resultSet.next()) {
+                User user1 = new User(resultSet.getString(2), resultSet.getString(3), resultSet.getString(4)
+                        , resultSet.getString(5), resultSet.getString(6), resultSet.getInt(7));
+                return user1;
             }
 
         } catch (SQLException throwables) {

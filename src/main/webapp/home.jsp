@@ -32,14 +32,14 @@
                     <!--                    <li><a href="#">Delivery</a></li>-->
                     <!--                    <li><a href="#">My Account</a></li>-->
                     <li><a href='<c:url value="/login?action=login"/>'>Login</a></li>
-                    <li><a href="login/login.jsp">Logout</a></li>
+                    <li><a href="login?action=login">Logout</a></li>
                 </ul>
             </div>
             <div class="clear"></div>
         </div>
         <div class="header_top">
             <div class="logo">
-                <a href="home.jsp"><img src="/images/logo.png" alt="" /></a>
+                <a href="home.jsp"><img src="/0images/logo.png" alt="" /></a>
             </div>
             <div class="cart">
                 <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00

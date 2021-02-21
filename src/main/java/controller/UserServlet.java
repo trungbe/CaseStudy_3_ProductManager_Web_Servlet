@@ -90,23 +90,36 @@ public class UserServlet extends HttpServlet {
     private void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        UserService userService1 = new UserService();
-        User user = userService1.login(username, password);
-        if (user == null) response.sendRedirect("login/login.jsp");
-        else response.sendRedirect("dashboard/index.jsp");
+        User user = userService.login(username, password);
+        if (user == null) {
+            response.sendRedirect("login?action=login");
+        }
+        else {
+            if (user.getId_role() == 1){
+                response.sendRedirect("dashboard/index.jsp");
+            }else {
+                response.sendRedirect("home.jsp");
+            }
+
+        }
     }
 
     private void createUser(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
+//        int id = Integer.parseInt(request.getParameter("id"));
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String fullname = request.getParameter("fullname");
-        int birthday = Integer.parseInt(request.getParameter("birthday"));
+        String birthday =request.getParameter("birthday");
         String address = request.getParameter("address");
-        int id_role = Integer.parseInt(request.getParameter("id_role"));
-        User user = new User(id, username, password, fullname, birthday, address, id_role);
-        userService.create(user);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("login/register.jsp");
+        int id_role = 2;
+        User user = new User(username, password, fullname, birthday, address, id_role);
+        User user1 = userService.create(user);
+        RequestDispatcher dispatcher;
+        if (user1 !=null){
+            dispatcher = request.getRequestDispatcher("login/loading.jsp");
+        } else {
+            dispatcher = request.getRequestDispatcher("login/register.jsp");
+        }
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

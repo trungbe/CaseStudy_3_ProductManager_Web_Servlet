@@ -5,14 +5,23 @@ public class User {
     private String username;
     private String password;
     private String fullname;
-    private int birthday;
+    private String birthday;
     private String address;
     private int id_role;
 
-    public User(String string, String resultSetString) {
+    public User() {
     }
 
-    public User(int id_user, String username, String password, String fullname, int birthday, String address, int id_role) {
+    public User(String username, String password, String fullname, String birthday, String address, int id_role) {
+        this.username = username;
+        this.password = password;
+        this.fullname = fullname;
+        this.birthday = birthday;
+        this.address = address;
+        this.id_role = id_role;
+    }
+
+    public User(int id_user, String username, String password, String fullname, String birthday, String address, int id_role) {
         this.id_user = id_user;
         this.username = username;
         this.password = password;
@@ -54,11 +63,11 @@ public class User {
         this.fullname = fullname;
     }
 
-    public int getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(int birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
