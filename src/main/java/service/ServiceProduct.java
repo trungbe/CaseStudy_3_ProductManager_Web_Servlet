@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ServiceProduct implements IServiceProduct{
     private static final String SELECT_ALL_PRODUCT="select * from product";
-    public static final String CREATE_NEW_PRODUCT = "insert into product" + " (name_product,price,origin,description) values" + "(?,?,?,?);";
+    public static final String CREATE_NEW_PRODUCT = "insert into product(name_product,price,origin,description) values (?,?,?,?)";
     public static final String FIND_PRODUCT_BY_ID= "select  * from product where id=? ";
     public static final String UPDATE_PRODUCT = "update product set name = ?,price =?,description=?,producer=? where id= ?";
     public static final String DELETE_PRODUCT= "delete from product where id= ?";
@@ -53,7 +53,7 @@ public class ServiceProduct implements IServiceProduct{
     }
 
     @Override
-    public Product save(int id, Product product) {
+    public Product save(Product product) {
         Connection connection=getConnection();
         try {
             PreparedStatement preparedStatement= connection.prepareStatement(CREATE_NEW_PRODUCT);
@@ -69,13 +69,30 @@ public class ServiceProduct implements IServiceProduct{
     }
 
     @Override
-    public Product edit(int id, Product product) {
+    public Product edit(Product product) {
+
         return null;
     }
 
     @Override
     public Product findById(int id) {
-        return null;
+        Product product=null;
+        Connection connection=getConnection();
+        try {
+            PreparedStatement preparedStatement= connection.prepareStatement(FIND_PRODUCT_BY_ID);
+            preparedStatement.setInt(1,id);
+            ResultSet resultSet= preparedStatement.executeQuery();
+            while (resultSet.next()){
+                String name= resultSet.getString("name_product");
+                int price=resultSet.getInt("price");
+                String origin=resultSet.getString("origin");
+                String des=resultSet.getString("description");
+                product=new Product(id,name,price,origin,des);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return product;
     }
 
     @Override

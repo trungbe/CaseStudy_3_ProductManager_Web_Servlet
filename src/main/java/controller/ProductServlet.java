@@ -53,7 +53,22 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
-
+        int id= Integer.parseInt(request.getParameter("id"));
+        Product product= serviceProduct.findById(id);
+        RequestDispatcher requestDispatcher;
+        if (product==null){
+            requestDispatcher=request.getRequestDispatcher("404.jsp");
+        }else {
+            request.setAttribute("p",product);
+            requestDispatcher=request.getRequestDispatcher("product/edit.jsp");
+            try {
+                requestDispatcher.forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
@@ -97,6 +112,20 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void createProduct(HttpServletRequest request, HttpServletResponse response) {
-
+        int id= Integer.parseInt(request.getParameter("id"));
+        String name_product=request.getParameter("name_product");
+        int price= Integer.parseInt(request.getParameter("price"));
+        String origin=request.getParameter("origin");
+        String description=request.getParameter("description");
+        Product product=new Product(id,name_product,price,origin,description);
+        serviceProduct.save(product);
+        RequestDispatcher requestDispatcher=request.getRequestDispatcher("product/create.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

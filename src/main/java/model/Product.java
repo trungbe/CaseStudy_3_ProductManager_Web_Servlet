@@ -8,6 +8,14 @@ public class Product {
     private String description;
 
     public Product() {
+
+    }
+
+    public Product(String name_product, int price, String origin, String description) {
+        this.name_product = name_product;
+        this.price = price;
+        this.origin = origin;
+        this.description = description;
     }
 
     public Product(int id, String name_product, int price, String origin, String description) {
