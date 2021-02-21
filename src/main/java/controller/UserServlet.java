@@ -32,7 +32,6 @@ public class UserServlet extends HttpServlet {
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
-
         }
     }
 
