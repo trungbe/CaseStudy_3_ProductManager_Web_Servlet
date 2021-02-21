@@ -10,7 +10,7 @@ public class ServiceProduct implements IServiceProduct{
     private static final String SELECT_ALL_PRODUCT="select * from product";
     public static final String CREATE_NEW_PRODUCT = "insert into product(name_product,price,origin,description) values (?,?,?,?)";
     public static final String FIND_PRODUCT_BY_ID= "select  * from product where id=? ";
-    public static final String UPDATE_PRODUCT = "update product set name = ?,price =?,description=?,producer=? where id= ?";
+    public static final String EDIT_PRODUCT = "update product set name = ?,price =?,description=?,producer=? where id= ?";
     public static final String DELETE_PRODUCT= "delete from product where id= ?";
     public static final String SORT_BY_NAME= "select * from product order by name asc ;";
     public static final String SEARCH_BY_NAME = "select * from product where name like ?";
@@ -69,9 +69,20 @@ public class ServiceProduct implements IServiceProduct{
     }
 
     @Override
-    public Product edit(Product product) {
-
-        return null;
+    public Product edit(int id,Product product) {
+        Connection connection=getConnection();
+        try {
+            PreparedStatement preparedStatement= connection.prepareStatement(EDIT_PRODUCT);
+            preparedStatement.setString(1,product.getName_product());
+            preparedStatement.setInt(2,product.getPrice());
+            preparedStatement.setString(3,product.getOrigin());
+            preparedStatement.setString(4,product.getDescription());
+            preparedStatement.setInt(5,id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return product;
     }
 
     @Override
