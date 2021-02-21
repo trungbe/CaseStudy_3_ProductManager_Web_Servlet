@@ -44,17 +44,19 @@
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Welcome !</h1>
                                 </div>
-                                <form class="user">
+                                <form class="user" method="post" >
                                     <div class="form-group">
                                         <!--                                        aria-describedby="emailHelp"-->
                                         <input  class="form-control form-control-user"
                                                 id="exampleInputEmail" placeholder="Username"
-                                                type="email">
+                                                name="username"
+                                                type="text" required>
                                         <div id="username-invalid"></div>
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control form-control-user" id="exampleInputPassword"
-                                               placeholder="Password" type="password">
+                                               name="password" placeholder="Password"
+                                               type="password" required>
                                         <div id="password-invalid"></div>
                                     </div>
                                     <div class="form-group">
@@ -63,9 +65,7 @@
                                             <label class="custom-control-label" for="customCheck">Remember Me</label>
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary btn-user btn-block" onclick="login()">
-                                        Login
-                                    </button>
+                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" >
                                     <hr>
                                     <a class="btn btn-google btn-user btn-block" href="#">
                                         <i class="fab fa-google fa-fw"></i> Login with Google
@@ -79,7 +79,7 @@
                                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.jsp">Create an Account!</a>
+                                    <a class="small" href="/login?action=register">Create an Account!</a>
                                 </div>
                             </div>
                         </div>
