@@ -8,12 +8,20 @@ import java.util.List;
 
 public class ServiceProduct implements IServiceProduct{
     private static final String SELECT_ALL_PRODUCT="select * from product";
+    public static final String CREATE_NEW_PRODUCT = "insert into product" + " (name_product,price,origin,description) values" + "(?,?,?,?);";
+    public static final String FIND_PRODUCT_BY_ID= "select  * from product where id=? ";
+    public static final String UPDATE_PRODUCT = "update product set name = ?,price =?,description=?,producer=? where id= ?";
+    public static final String DELETE_PRODUCT= "delete from product where id= ?";
+    public static final String SORT_BY_NAME= "select * from product order by name asc ;";
+    public static final String SEARCH_BY_NAME = "select * from product where name like ?";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/productmanagers";
+    private String jdbcUser = "root";
+    private String jdbcPassword = "123456";
     private Connection getConnection(){
         Connection connection=null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/productmanagers"
-            ,"root","123456");
+            connection= DriverManager.getConnection(jdbcURL,jdbcUser,jdbcPassword);
         } catch (ClassNotFoundException e) {
             System.out.println("khong co thu vien");
         } catch (SQLException throwables) {
@@ -46,7 +54,18 @@ public class ServiceProduct implements IServiceProduct{
 
     @Override
     public Product save(int id, Product product) {
-        return null;
+        Connection connection=getConnection();
+        try {
+            PreparedStatement preparedStatement= connection.prepareStatement(CREATE_NEW_PRODUCT);
+            preparedStatement.setString(1,product.getName_product());
+            preparedStatement.setInt(2,product.getPrice());
+            preparedStatement.setString(3,product.getOrigin());
+            preparedStatement.setString(4,product.getDescription());
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return product;
     }
 
     @Override
