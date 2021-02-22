@@ -8,4 +8,5 @@ public interface IGenericService<T> {
     boolean edit(T t);
     T findById(int id);
     boolean delete(int id);
+    List<T> findByName(String name);
 }

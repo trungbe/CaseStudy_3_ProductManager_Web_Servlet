@@ -29,9 +29,26 @@ public class ProductServlet extends HttpServlet {
             case "delete":
                 showDeleteForm(request,response);
                 break;
+            case "search":
+                searchByName(request,response);
+                break;
             default:
                 showFindAll(request,response);
                 break;
+        }
+    }
+
+    private void searchByName(HttpServletRequest request, HttpServletResponse response) {
+        String name= request.getParameter("name_product");
+        List<Product>products= serviceProduct.findByName(name);
+        request.setAttribute("p",products);
+        RequestDispatcher requestDispatcher=request.getRequestDispatcher("product/list.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
