@@ -1,7 +1,9 @@
 package service.user;
 
 import model.User;
-import service.IService;
+import service.IGeneralService;
 
-public interface IUserService extends IService<User> {
+public interface IUserService extends IGeneralService<User> {
+    User login(String user, String pass);
+
 }

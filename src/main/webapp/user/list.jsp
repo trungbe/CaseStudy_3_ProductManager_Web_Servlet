@@ -2,10 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>User List</title>
+    <title>Title</title>
 </head>
 <body>
-<h1>User List</h1>
 <table>
     <tr>
         <td>Username</td>
@@ -14,14 +13,14 @@
         <td>Birthday</td>
         <td>Address</td>
     </tr>
-    <c:forEach items="${list}" var="user">
-    <tr>
-        <td>${user.getUsername()}</td>
-        <td>${user.getPassword()}</td>
-        <td>${user.getFullname()}</td>
-        <td>${user.getBirthday()}</td>
-        <td>${user.getAddress()}</td>
-    <tr/>
+    <c:forEach items="${userList}" var="user">
+        <tr>
+            <td>${user.getUsername()}</td>
+            <td>${user.getPassword()}</td>
+            <td>${user.getFullname()}</td>
+            <td>${user.getBirthday()}</td>
+            <td>${user.getAddress()}</td>
+        <tr/>
     </c:forEach>
 </table>
 </body>

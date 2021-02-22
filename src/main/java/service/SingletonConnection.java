@@ -5,24 +5,25 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SingletonConnection {
-    public static final String URL_CONNECTION_DB = "jdbc:mysql://localhost:3306/productmanagers";
-    public static final String USER = "root";
-    public static final String PASSWORD = "admin";
+    public static String jdbcURL = "jdbc:mysql://localhost:3306/productmanagers";
+    public static String jdbcUser = "root";
+    public static String jdbcPassword = "admin";
     private static Connection connection;
 
     public static Connection getConnection() {
-        if (connection == null){
+        if (connection == null) {
             try {
-                try {
-                    Class.forName("com.mysql.jdbc.Driver");
-                    connection = DriverManager.getConnection(URL_CONNECTION_DB,USER,PASSWORD);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                }
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                Class.forName("com.mysql.jdbc.Driver");
+                connection = DriverManager.getConnection(jdbcURL, jdbcUser, jdbcPassword);
+
+            } catch (ClassNotFoundException e) {
+                System.out.println("kh co driver");
+            } catch (SQLException throwable) {
+                System.out.println("kh connect sql");
             }
+            System.out.println("connect thanh cong");
         }
-            return connection;
+        return connection;
     }
 }
+
