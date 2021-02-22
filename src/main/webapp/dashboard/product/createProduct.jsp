@@ -35,7 +35,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fab fa-phoenix-framework"></i>
             </div>
@@ -44,16 +44,17 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
+
         <li class="nav-item active">
-            <a class="nav-link" href="../home.html">
+            <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Home</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-            <a class="nav-link" href="../index.html">
+        <li class="nav-item active">
+            <a class="nav-link" href="/dashboard">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -61,15 +62,10 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
 
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Addons
-        </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed"
-               data-target="#collapsePages"
+            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed" data-target="#collapsePages"
                data-toggle="collapse" href="#">
                 <i class="fas fa-fw fa-folder"></i>
                 <span>Pages</span>
@@ -78,8 +74,8 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Login Screens:</h6>
 
-                    <a class="collapse-item" href="../login/register.html">Register</a>
-                    <a class="collapse-item" href="../login/forgot-password.html">Forgot Password</a>
+                    <a class="collapse-item" href="login/register.html">Register</a>
+                    <a class="collapse-item" href="login/forgot-password.html">Forgot Password</a>
                     <div class="collapse-divider"></div>
 
                 </div>
@@ -89,13 +85,13 @@
 
         <!-- Nav Item - Tables Product -->
         <li class="nav-item">
-            <a class="nav-link" href="list-edit-del-product.html">
+            <a class="nav-link" href="/dashboard/product?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Product Management</span></a>
         </li>
         <!-- Nav Item - Tables Customer -->
         <li class="nav-item">
-            <a class="nav-link" href="list-customer.html">
+            <a class="nav-link" href="/dashboard/user?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Customer Management</span></a>
         </li>
@@ -107,6 +103,7 @@
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
+
 
     </ul>
     <!-- End of Sidebar -->

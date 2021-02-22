@@ -9,9 +9,9 @@ import java.util.List;
 
 public class ServiceProduct implements IServiceProduct {
     private static final String SELECT_ALL_PRODUCT = "select * from product";
-    public static final String CREATE_NEW_PRODUCT = "insert into product(name_product,price,origin,description) values (?,?,?,?)";
+    public static final String CREATE_NEW_PRODUCT = "insert into product(name_product,price,origin,description,image) values (?,?,?,?,?)";
     public static final String FIND_PRODUCT_BY_ID = "select  * from product where id=? ";
-    public static final String EDIT_PRODUCT = "update product set name_product = ?,price =?,origin=?,description=? where id= ?";
+    public static final String EDIT_PRODUCT = "update product set name_product = ?,price =?,origin=?,description=?,image=? where id= ?";
     public static final String DELETE_PRODUCT = "delete from product where id= ?";
     public static final String SEARCH_BY_NAME = "select * from product where name_product like ?";
     private Connection connection = SingletonConnection.getConnection();
@@ -28,7 +28,8 @@ public class ServiceProduct implements IServiceProduct {
                 int price = resultSet.getInt("price");
                 String origin = resultSet.getString("origin");
                 String description = resultSet.getString("description");
-                Product product = new Product(id, name_product, price, origin, description);
+                String image= resultSet.getString("image");
+                Product product = new Product(id, name_product, price, origin, description,image);
                 products.add(product);
             }
         } catch (SQLException throwables) {
@@ -45,6 +46,7 @@ public class ServiceProduct implements IServiceProduct {
             preparedStatement.setInt(2, product.getPrice());
             preparedStatement.setString(3, product.getOrigin());
             preparedStatement.setString(4, product.getDescription());
+            preparedStatement.setString(5,product.getImage());
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -57,11 +59,12 @@ public class ServiceProduct implements IServiceProduct {
         boolean check = false;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(EDIT_PRODUCT);
-            preparedStatement.setInt(5, product.getId());
+            preparedStatement.setInt(6, product.getId());
             preparedStatement.setString(1, product.getName_product());
             preparedStatement.setInt(2, product.getPrice());
             preparedStatement.setString(3, product.getOrigin());
             preparedStatement.setString(4, product.getDescription());
+            preparedStatement.setString(5, product.getImage());
             check = preparedStatement.executeUpdate() > 0;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -81,7 +84,8 @@ public class ServiceProduct implements IServiceProduct {
                 int price = resultSet.getInt("price");
                 String origin = resultSet.getString("origin");
                 String des = resultSet.getString("description");
-                product = new Product(id, name, price, origin, des);
+                String image=resultSet.getString("image");
+                product = new Product(id, name, price, origin, des,image);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -114,7 +118,8 @@ public class ServiceProduct implements IServiceProduct {
                 int price = resultSet.getInt("price");
                 String origin = resultSet.getString("origin");
                 String des = resultSet.getString("description");
-                products.add(new Product(name_product, price, origin, des));
+                String image=resultSet.getString("image");
+                products.add(new Product(name_product, price, origin, des,image));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

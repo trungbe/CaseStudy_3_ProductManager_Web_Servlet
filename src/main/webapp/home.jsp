@@ -30,11 +30,11 @@
             </div>
             <div class="account_desc">
                 <ul>
-                    <li><a href="#">Register</a></li>
+                    <li><a href="/register">Register</a></li>
                     <!--                    <li><a href="#">Delivery</a></li>-->
                     <!--                    <li><a href="#">My Account</a></li>-->
-                    <li id="login"><a href='<c:url value="/login?action=login"/>'>Login</a></li>
-                    <li><a href="login?action=login">Logout</a></li>
+                    <li id="login"><a href='<c:url value="/login"/>'>Login</a></li>
+                    <li><a href="/logout">Logout</a></li>
                 </ul>
             </div>
             <div class="clear"></div>
@@ -58,6 +58,7 @@
                 if ($('#username').val() != "") {
                     $("#login").html('<a href=\'<c:url value="#"/>\'>Chào mừng '+$('#username').val()+'</a>')
                 }
+                window.history.pushState("object or string", "Title", "http://localhost:8080/home");
 
                 function DropDown(el) {
                     this.dd = el;

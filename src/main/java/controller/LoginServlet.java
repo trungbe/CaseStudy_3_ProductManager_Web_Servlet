@@ -24,11 +24,7 @@ public class LoginServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "register": {
-                showCreateForm(request, response);
-                break;
-            }
-            case "login": {
+            case "": {
                 showLogin(request, response);
                 break;
             }
@@ -47,16 +43,7 @@ public class LoginServlet extends HttpServlet {
         }
     }
 
-    private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("login/register.jsp");
-        try {
-            dispatcher.forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -64,15 +51,7 @@ public class LoginServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "register": {
-                createUser(request, response);
-                break;
-            }
-            case "edit": {
-                //   updateUser(request, response);
-                break;
-            }
-            case "login": {
+            case "": {
                 login(request, response);
                 break;
             }
@@ -87,7 +66,7 @@ public class LoginServlet extends HttpServlet {
 
 
         if (user == null) {
-            response.sendRedirect("login?action=login");
+            response.sendRedirect("/login");
         }
         else {
             if (user.getId_role() == 1){
@@ -97,7 +76,7 @@ public class LoginServlet extends HttpServlet {
                 try {
                     request.setAttribute("username", user.getUsername());
                     request.setAttribute("idRole", user.getId_role());
-                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
+                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("/home.jsp");
                     requestDispatcher.forward(request, response);
                 } catch (Exception exception){
 
@@ -107,30 +86,6 @@ public class LoginServlet extends HttpServlet {
         }
     }
 
-    private void createUser(HttpServletRequest request, HttpServletResponse response) {
-//        int id = Integer.parseInt(request.getParameter("id"));
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String fullname = request.getParameter("fullname");
-        String birthday =request.getParameter("birthday");
-        String address = request.getParameter("address");
-        int id_role = 2;
-        User user = new User(username, password, fullname, birthday, address, id_role);
-        User user1 = loginService.create(user);
-        RequestDispatcher dispatcher;
-        if (user1 !=null){
-            dispatcher = request.getRequestDispatcher("login/loading.jsp");
-        } else {
-            dispatcher = request.getRequestDispatcher("login/register.jsp");
-        }
-        try {
-            dispatcher.forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
 
 

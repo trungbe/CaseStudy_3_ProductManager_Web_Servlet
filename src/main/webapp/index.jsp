@@ -12,7 +12,7 @@
 </head>
 <body>
 <script>
-    window.location="http://localhost:8080/home.jsp"
+    window.location="http://localhost:8080/home"
 </script>
 </body>
 </html>

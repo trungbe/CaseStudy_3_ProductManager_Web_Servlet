@@ -22,7 +22,7 @@
 </head>
 <body>
 <script>
-    window.location="http://localhost:8080/login?action=login"
+    window.location="http://localhost:8080/login"
 </script>
 </body>
 </html>
