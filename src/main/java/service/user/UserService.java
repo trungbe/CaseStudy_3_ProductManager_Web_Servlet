@@ -58,26 +58,6 @@ public class UserService implements IUserService {
         return duplicateUser;
     }
 
-
-//    public boolean login(User user) {
-//
-//        try {
-//            PreparedStatement p = connection.prepareStatement(LOGIN_SQL);
-//            p.setString(1, user.getUsername());
-//            p.setString(2, user.getPassword());
-//            ResultSet resultSet = p.executeQuery();
-//            isLogin = resultSet.next();
-//            if (isLogin) {
-//                return true;
-//            } else return false;
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//        return isLogin;
-//
-//    }
-
-
     @Override
     public User findById(int id) {
         return null;
