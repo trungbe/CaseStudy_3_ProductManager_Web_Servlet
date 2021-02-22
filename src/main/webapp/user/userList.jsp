@@ -193,7 +193,7 @@
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal"
-                               href="../login?action=login">
+                               href="/login?action=login">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
@@ -264,7 +264,7 @@
                                         <tr>
                                             <td>${user.getId_user()}</td>
                                             <td>${user.getUsername()}</td>
-                                            <td>${user.getPassword()}</td>
+                                            <td>**********</td>
                                             <td>${user.getFullname()}</td>
                                             <td>${user.getBirthday()}</td>
                                             <td>${user.getAddress()}</td>
@@ -337,7 +337,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
-                <a class="btn btn-primary" href="../login/login.html">Logout</a>
+                <a class="btn btn-primary" href="/login?action=login">Logout</a>
             </div>
         </div>
     </div>

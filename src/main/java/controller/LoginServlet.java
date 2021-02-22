@@ -84,6 +84,8 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = loginService.login(username, password);
+
+
         if (user == null) {
             response.sendRedirect("login?action=login");
         }
@@ -92,7 +94,14 @@ public class LoginServlet extends HttpServlet {
 //                response.sendRedirect("dashboard/index.jsp");
                 response.sendRedirect("/dashboard");
             }else {
-                response.sendRedirect("home.jsp");
+                try {
+                    request.setAttribute("username", user.getUsername());
+                    request.setAttribute("idRole", user.getId_role());
+                    RequestDispatcher requestDispatcher = request.getRequestDispatcher("home.jsp");
+                    requestDispatcher.forward(request, response);
+                } catch (Exception exception){
+
+                }
             }
 
         }
