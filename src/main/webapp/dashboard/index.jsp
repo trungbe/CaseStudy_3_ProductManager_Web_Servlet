@@ -85,7 +85,7 @@
         </li>
         <!-- Nav Item - Tables Customer -->
         <li class="nav-item">
-            <a class="nav-link" href="/user/userList.jsp">
+            <a class="nav-link" href="/dashboard?action=user">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Customer Management</span></a>
         </li>
