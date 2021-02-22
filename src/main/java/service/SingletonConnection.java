@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class SingletonConnection {
     public static String jdbcURL = "jdbc:mysql://localhost:3306/productmanagers";
     public static String jdbcUser = "root";
-    public static String jdbcPassword = "admin";
+    public static String jdbcPassword = "123456";
     private static Connection connection;
 
     public static Connection getConnection() {
