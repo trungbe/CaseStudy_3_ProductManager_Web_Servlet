@@ -8,9 +8,6 @@
 <h1>Danh sách sản phẩm</h1>
 <button><a href="/products?action=create">Create new product</a></button>
 <form action="/products">
-<%--    <input value="search" name="action" hidden >--%>
-<%--    <input type="text" name="name" placeholder="Nhập tên">--%>
-<%--    <input type="submit" value="Tìm kiếm">--%>
 </form>
 
 <table border="2px">

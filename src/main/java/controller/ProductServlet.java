@@ -120,7 +120,13 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
-
+        int id=Integer.parseInt(request.getParameter("id"));
+        serviceProduct.delete(id);
+        try {
+            response.sendRedirect("/products");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void editProduct(HttpServletRequest request, HttpServletResponse response) {
@@ -129,7 +135,7 @@ public class ProductServlet extends HttpServlet {
         int price= Integer.parseInt(request.getParameter("price"));
         String origin=request.getParameter("origin");
         String description=request.getParameter("description");
-        serviceProduct.edit(id,new Product(id,name,price,origin,description));
+        serviceProduct.edit(new Product(id,name,price,origin,description));
         try {
             response.sendRedirect("/products");
         } catch (IOException e) {
@@ -139,12 +145,11 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void createProduct(HttpServletRequest request, HttpServletResponse response) {
-        int id= Integer.parseInt(request.getParameter("id"));
         String name_product=request.getParameter("name_product");
         int price= Integer.parseInt(request.getParameter("price"));
         String origin=request.getParameter("origin");
         String description=request.getParameter("description");
-        Product product=new Product(id,name_product,price,origin,description);
+        Product product=new Product(name_product,price,origin,description);
         serviceProduct.save(product);
         RequestDispatcher requestDispatcher=request.getRequestDispatcher("product/create.jsp");
         try {

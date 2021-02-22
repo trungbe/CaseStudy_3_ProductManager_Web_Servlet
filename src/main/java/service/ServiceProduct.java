@@ -10,9 +10,8 @@ public class ServiceProduct implements IServiceProduct{
     private static final String SELECT_ALL_PRODUCT="select * from product";
     public static final String CREATE_NEW_PRODUCT = "insert into product(name_product,price,origin,description) values (?,?,?,?)";
     public static final String FIND_PRODUCT_BY_ID= "select  * from product where id=? ";
-    public static final String EDIT_PRODUCT = "update product set name = ?,price =?,description=?,producer=? where id= ?";
+    public static final String EDIT_PRODUCT = "update product set name_product = ?,price =?,origin=?,description=? where id= ?";
     public static final String DELETE_PRODUCT= "delete from product where id= ?";
-    public static final String SORT_BY_NAME= "select * from product order by name asc ;";
     public static final String SEARCH_BY_NAME = "select * from product where name like ?";
     private String jdbcURL = "jdbc:mysql://localhost:3306/productmanagers";
     private String jdbcUser = "root";
@@ -69,20 +68,21 @@ public class ServiceProduct implements IServiceProduct{
     }
 
     @Override
-    public Product edit(int id,Product product) {
+    public boolean edit(Product product) {
         Connection connection=getConnection();
+        boolean check = false;
         try {
             PreparedStatement preparedStatement= connection.prepareStatement(EDIT_PRODUCT);
+            preparedStatement.setInt(5,product.getId());
             preparedStatement.setString(1,product.getName_product());
             preparedStatement.setInt(2,product.getPrice());
             preparedStatement.setString(3,product.getOrigin());
             preparedStatement.setString(4,product.getDescription());
-            preparedStatement.setInt(5,id);
-            preparedStatement.executeUpdate();
+            check=preparedStatement.executeUpdate()>0;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return product;
+        return check;
     }
 
     @Override
@@ -107,7 +107,16 @@ public class ServiceProduct implements IServiceProduct{
     }
 
     @Override
-    public void delete(int id) {
-
+    public boolean delete(int id) {
+        Connection connection=getConnection();
+        boolean check=false;
+        try {
+            PreparedStatement preparedStatement=connection.prepareStatement(DELETE_PRODUCT);
+            preparedStatement.setInt(1,id);
+            check=preparedStatement.executeUpdate()>0;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return check;
     }
 }
