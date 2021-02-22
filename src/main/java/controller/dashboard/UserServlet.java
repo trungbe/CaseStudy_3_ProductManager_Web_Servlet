@@ -1,5 +1,6 @@
-package controller;
+package controller.dashboard;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
 import model.User;
 import service.user.IUserService;
 import service.user.UserService;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "UserServlet", urlPatterns = "/dashboard")
+@WebServlet(name = "UserServlet", urlPatterns = "/dashboard/user")
 public class UserServlet extends HttpServlet {
     private static final IUserService userService = new UserService();
 
@@ -24,7 +25,7 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "user": {
+            case "": {
                 showAllUser(request, response);
                 break;
             }
