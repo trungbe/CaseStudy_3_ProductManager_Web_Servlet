@@ -152,7 +152,8 @@ public class ProductServlet extends HttpServlet {
         int price= Integer.parseInt(request.getParameter("price"));
         String origin=request.getParameter("origin");
         String description=request.getParameter("description");
-        serviceProduct.edit(new Product(id,name,price,origin,description));
+        String image=request.getParameter("image");
+        serviceProduct.edit(new Product(id,name,price,origin,description,image));
         try {
             response.sendRedirect("/products");
         } catch (IOException e) {
@@ -166,7 +167,8 @@ public class ProductServlet extends HttpServlet {
         int price= Integer.parseInt(request.getParameter("price"));
         String origin=request.getParameter("origin");
         String description=request.getParameter("description");
-        Product product=new Product(name_product,price,origin,description);
+        String image=request.getParameter("image");
+        Product product=new Product(name_product,price,origin,description,image);
         serviceProduct.save(product);
         RequestDispatcher requestDispatcher=request.getRequestDispatcher("product/create.jsp");
         try {

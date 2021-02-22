@@ -222,6 +222,7 @@
                                     <th>Price</th>
                                     <th>Origin</th>
                                     <th>Description</th>
+                                    <th>Image</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -231,6 +232,7 @@
                                     <th>Price</th>
                                     <th>Origin</th>
                                     <th>Description</th>
+                                    <th>Image</th>
                                 </tr>
                                 </tfoot>
                                 <!-- display list product -->
@@ -242,6 +244,7 @@
                                         <td>${product.getPrice()}</td>
                                         <td>${product.getOrigin()}</td>
                                         <td>${product.getDescription()}</td>
+                                        <td>${product.getImage()}</td>
 <%--                                        <td><a href="/products?action=edit&id=${product.getId()}">Edit</a></td>--%>
                                         <td><button class="btn btn-info" data-toggle="modal" data-target="#exampleModal"><a href="/products?action=edit&id=${product.getId()}"></a>Edit</button></td>
                                         <td><a href="/products?action=delete&id=${product.getId()}">Delete</a></td>

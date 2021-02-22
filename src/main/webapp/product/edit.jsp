@@ -26,6 +26,10 @@
         <td><input type="text" name="description" value="${p.getDescription()}"></td>
     </tr>
     <tr>
+        <td>Image</td>
+        <td><input type="text" name="image" value="${p.getImage()}"></td>
+    </tr>
+    <tr>
         <td><input type="submit" value="Edit"></td>
     </tr>
 </table>

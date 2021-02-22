@@ -6,24 +6,27 @@ public class Product {
     private int price;
     private String origin;
     private String description;
+    private String image;
 
     public Product() {
 
     }
 
-    public Product(String name_product, int price, String origin, String description) {
+    public Product(String name_product, int price, String origin, String description, String image) {
         this.name_product = name_product;
         this.price = price;
         this.origin = origin;
         this.description = description;
+        this.image = image;
     }
 
-    public Product(int id, String name_product, int price, String origin, String description) {
+    public Product(int id, String name_product, int price, String origin, String description, String image) {
         this.id = id;
         this.name_product = name_product;
         this.price = price;
         this.origin = origin;
         this.description = description;
+        this.image = image;
     }
 
     public int getId() {
@@ -64,5 +67,13 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

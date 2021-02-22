@@ -24,6 +24,10 @@
         <td><input type="text" name="description" placeholder="nhập mô tả"></td>
     </tr>
     <tr>
+        <td>Image</td>
+        <td><input type="text" name="image" placeholder="chèn ảnh"></td>
+    </tr>
+    <tr>
         <td><input type="submit" value="Create"></td>
     </tr>
 </table>
