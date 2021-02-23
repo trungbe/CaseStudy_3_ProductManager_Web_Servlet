@@ -34,7 +34,7 @@
                     <!--                    <li><a href="#">Delivery</a></li>-->
                     <!--                    <li><a href="#">My Account</a></li>-->
                     <li id="login"><a href='<c:url value="/login"/>'>Login</a></li>
-                    <li><a href="/logout">Logout</a></li>
+                    <li><a href="/login">Logout</a></li>
                 </ul>
             </div>
             <div class="clear"></div>

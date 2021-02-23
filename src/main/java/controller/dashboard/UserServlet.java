@@ -24,7 +24,7 @@ public class UserServlet extends HttpServlet {
             action = "";
         }
         switch (action) {
-            case "showAll": {
+            case "": {
                 showAllUser(request, response);
                 break;
             }
