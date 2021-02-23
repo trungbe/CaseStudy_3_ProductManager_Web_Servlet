@@ -1,8 +1,8 @@
 package controller.dashboard;
 
 import model.Product;
-import service.product.IServiceProduct;
-import service.product.ServiceProduct;
+import service.product.IProductService;
+import service.product.ProductService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/dashboard/product")
 public class ProductServlet extends HttpServlet {
-    IServiceProduct serviceProduct =new ServiceProduct();
+    IProductService serviceProduct =new ProductService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action=request.getParameter("action");
@@ -42,7 +42,7 @@ public class ProductServlet extends HttpServlet {
         String name= request.getParameter("name_product");
         List<Product>products= serviceProduct.findByName(name);
         request.setAttribute("p",products);
-        RequestDispatcher requestDispatcher=request.getRequestDispatcher("product/list.jsp");
+        RequestDispatcher requestDispatcher=request.getRequestDispatcher("/product/list.jsp");
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -66,22 +66,31 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) {
-        int id= Integer.parseInt(request.getParameter("id"));
-        Product product= serviceProduct.findById(id);
-        RequestDispatcher requestDispatcher;
-        if (product==null){
-            requestDispatcher=request.getRequestDispatcher("404.jsp");
-        }else {
-            request.setAttribute("p",product);
-            requestDispatcher=request.getRequestDispatcher("product/delete.jsp");
-            try {
-                requestDispatcher.forward(request,response);
-            } catch (ServletException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//        int id= Integer.parseInt(request.getParameter("id"));
+//        Product product= serviceProduct.findById(id);
+//        RequestDispatcher requestDispatcher;
+//        if (product==null){
+//            requestDispatcher =request.getRequestDispatcher("404.jsp");
+//        }else {
+//            request.setAttribute("p",product);
+//            requestDispatcher=request.getRequestDispatcher("product/delete.jsp");
+//            try {
+//                requestDispatcher.forward(request,response);
+//            } catch (ServletException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+        int id=Integer.parseInt(request.getParameter("id"));
+        serviceProduct.delete(id);
+        try {
+
+            response.sendRedirect("/dashboard/product");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
 
     }
 
@@ -140,6 +149,7 @@ public class ProductServlet extends HttpServlet {
         int id=Integer.parseInt(request.getParameter("id"));
         serviceProduct.delete(id);
         try {
+
             response.sendRedirect("/dashboard/product");
         } catch (IOException e) {
             e.printStackTrace();

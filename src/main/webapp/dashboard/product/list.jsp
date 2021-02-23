@@ -26,7 +26,9 @@
     <!-- Custom styles for this page -->
     <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+          crossorigin="anonymous"/>
 </head>
 
 <body id="page-top">
@@ -50,9 +52,9 @@
 
         <li class="nav-item active">
             <a class="nav-link" href="../home.jsp">
-            <a class="nav-link" href="/">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Home</span></a>
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Home</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -69,7 +71,8 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed" data-target="#collapsePages"
+            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed"
+               data-target="#collapsePages"
                data-toggle="collapse" href="#">
                 <i class="fas fa-fw fa-folder"></i>
                 <span>Pages</span>
@@ -90,16 +93,16 @@
         <!-- Nav Item - Tables Product -->
         <li class="nav-item">
             <a class="nav-link" href="/products">
-            <a class="nav-link" href="/dashboard/product?action=showAll">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Product Management</span></a>
+                <a class="nav-link" href="/dashboard/product?action=showAll">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Product Management</span></a>
         </li>
         <!-- Nav Item - Tables Customer -->
         <li class="nav-item">
             <a class="nav-link" href="/login?action=show">
-            <a class="nav-link" href="/dashboard/user?action=showAll">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Customer Management</span></a>
+                <a class="nav-link" href="/dashboard/user?action=showAll">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Customer Management</span></a>
         </li>
 
         <!-- Divider -->
@@ -249,11 +252,39 @@
                                         <td>${product.getPrice()}</td>
                                         <td>${product.getOrigin()}</td>
                                         <td>${product.getDescription()}</td>
-                                        <td><img src="${product.getImage()}" alt="" style="height:200px;object-fit: cover"></td>
-                                        <td><a class="btn btn-info" href="/dashboard/product?action=edit&id=${product.getId()}">Edit</a></td>
-                                        <td><a class="btn btn-danger" href="">Delete</a></td>
-
+                                        <td><img src="${product.getImage()}" alt=""
+                                                 style="height:200px;object-fit: cover"></td>
+                                        <td><a class="btn btn-info"
+                                               href="/dashboard/product?action=edit&id=${product.getId()}">Edit</a></td>
+                                        <td><a data-toggle="modal" data-target="#exampleModal1"
+                                               class="btn btn-danger">Delete</a></td>
                                     </tr>
+                                    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal1" role="dialog"
+                                         tabindex="-1">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Bạn có muốn xóa?</h5>
+                                                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">Xin mời lựa chọn</div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" data-dismiss="modal" type="button"><i class="fas fa-window-close"></i>
+                                                    </button>
+                                                    <button class="btn btn-primary"
+                                                            onclick="deleteProduct()" type="button"><i class="fas fa-trash-alt"></i></button>
+                                                </div>
+                                                <script>
+                                                    function deleteProduct(){
+                                                        window.location.href = '/dashboard/product?action=delete&id=${product.getId()}';
+                                                    }
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </c:forEach>
                                 </tbody>
                             </table>
@@ -329,31 +360,16 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button"><i class="fas fa-window-close"></i></button>
-                <button class="btn btn-primary" onclick="editProduct()" type="button"><i class="far fa-save"></i></button>
+                <button class="btn btn-secondary" data-dismiss="modal" type="button"><i class="fas fa-window-close"></i>
+                </button>
+                <button class="btn btn-primary" onclick="function editProduct(){
+
+                }" type="button"><i class="far fa-save"></i></button>
             </div>
         </div>
     </div>
 </div>
 <!-- Delete Modal -->
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal1" role="dialog"
-     tabindex="-1">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Delete?</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select icon "Delete" below if you are ready to delete your current product.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button"><i class="fas fa-window-close"></i></button>
-                <button class="btn btn-primary"  onclick="deleteProduct()" type="button"><i class="fas fa-trash-alt"></i></button>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">
@@ -386,7 +402,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
-                <a class="btn btn-primary" href="../login/login.html" >Logout</a>
+                <a class="btn btn-primary" href="../login/login.html">Logout</a>
             </div>
         </div>
     </div>
