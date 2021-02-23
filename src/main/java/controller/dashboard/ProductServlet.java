@@ -140,7 +140,7 @@ public class ProductServlet extends HttpServlet {
         int id=Integer.parseInt(request.getParameter("id"));
         serviceProduct.delete(id);
         try {
-            response.sendRedirect("/products");
+            response.sendRedirect("/dashboard/product");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -155,7 +155,7 @@ public class ProductServlet extends HttpServlet {
         String image=request.getParameter("image");
         serviceProduct.edit(new Product(id,name,price,origin,description,image));
         try {
-            response.sendRedirect("/products");
+            response.sendRedirect("/dashboard/product");
         } catch (IOException e) {
             e.printStackTrace();
         }

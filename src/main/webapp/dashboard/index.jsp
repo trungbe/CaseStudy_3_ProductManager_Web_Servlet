@@ -304,7 +304,7 @@
                                 Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="/login?action=login">
+                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="/login">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>

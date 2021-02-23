@@ -49,6 +49,7 @@
         <hr class="sidebar-divider my-0">
 
         <li class="nav-item active">
+            <a class="nav-link" href="../home.jsp">
             <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Home</span></a>
@@ -88,12 +89,14 @@
 
         <!-- Nav Item - Tables Product -->
         <li class="nav-item">
+            <a class="nav-link" href="/products">
             <a class="nav-link" href="/dashboard/product?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Product Management</span></a>
         </li>
         <!-- Nav Item - Tables Customer -->
         <li class="nav-item">
+            <a class="nav-link" href="/login?action=show">
             <a class="nav-link" href="/dashboard/user?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Customer Management</span></a>
@@ -222,6 +225,7 @@
                                     <th>Image</th>
                                     <th></th>
                                     <th></th>
+
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -246,9 +250,9 @@
                                         <td>${product.getOrigin()}</td>
                                         <td>${product.getDescription()}</td>
                                         <td><img src="${product.getImage()}" alt="" style="height:200px;object-fit: cover"></td>
-<%--                                        <td><a href="/products?action=edit&id=${product.getId()}">Edit</a></td>--%>
-                                        <td><button class="btn btn-info" data-toggle="modal" data-target="#exampleModal"><a href="/products?action=edit&id=${product.getId()}"></a>Edit</button></td>
-                                        <td><a href="/products?action=delete&id=${product.getId()}">Delete</a></td>
+                                        <td><a class="btn btn-info" href="/dashboard/product?action=edit&id=${product.getId()}">Edit</a></td>
+                                        <td><a class="btn btn-danger" href="">Delete</a></td>
+
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -260,13 +264,11 @@
         </div>
     </div>
 </div>
-<%--<button><a href="/products?action=create">Create new product</a></button>--%>
-<%--<form action="/products">--%>
+<%--<form action="/dashboard/product">--%>
 <%--    <input value="search" name="action" hidden>--%>
 <%--    <input type="text" name="name_product" placeholder="Nhập tên">--%>
 <%--    <input type="submit" value="Tìm kiếm">--%>
 <%--</form>--%>
-
 <!-- Edit Modal -->
 <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal" tabindex="-1">
     <div class="modal-dialog">
