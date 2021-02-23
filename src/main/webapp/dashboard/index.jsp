@@ -29,7 +29,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fab fa-phoenix-framework"></i>
             </div>
@@ -40,7 +40,7 @@
         <hr class="sidebar-divider my-0">
 
         <li class="nav-item active">
-            <a class="nav-link" href="../home.jsp">
+            <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Home</span></a>
         </li>
@@ -48,7 +48,7 @@
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.jsp">
+            <a class="nav-link" href="">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -79,13 +79,13 @@
 
         <!-- Nav Item - Tables Product -->
         <li class="nav-item">
-            <a class="nav-link" href="/products">
+            <a class="nav-link" href="/dashboard/product?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Product Management</span></a>
         </li>
         <!-- Nav Item - Tables Customer -->
         <li class="nav-item">
-            <a class="nav-link" href="/login?action=show">
+            <a class="nav-link" href="/dashboard/user?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Customer Management</span></a>
         </li>
@@ -304,7 +304,7 @@
                                 Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="/login?action=login">
+                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="/login">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
@@ -690,7 +690,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
-                <a class="btn btn-primary" href="login/login.html">Logout</a>
+                <a class="btn btn-primary" href="/login?action=login">Logout</a>
             </div>
         </div>
     </div>

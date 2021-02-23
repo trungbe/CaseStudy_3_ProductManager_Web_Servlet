@@ -1,4 +1,4 @@
-package controller;
+package controller.dashboard;
 
 import model.Product;
 import service.product.IServiceProduct;
@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ProductServlet", value = "/products")
+@WebServlet(name = "ProductServlet", value = "/dashboard/product")
 public class ProductServlet extends HttpServlet {
     IServiceProduct serviceProduct =new ServiceProduct();
     @Override
@@ -140,7 +140,7 @@ public class ProductServlet extends HttpServlet {
         int id=Integer.parseInt(request.getParameter("id"));
         serviceProduct.delete(id);
         try {
-            response.sendRedirect("/products");
+            response.sendRedirect("/dashboard/product");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -155,7 +155,7 @@ public class ProductServlet extends HttpServlet {
         String image=request.getParameter("image");
         serviceProduct.edit(new Product(id,name,price,origin,description,image));
         try {
-            response.sendRedirect("/products");
+            response.sendRedirect("/dashboard/product");
         } catch (IOException e) {
             e.printStackTrace();
         }

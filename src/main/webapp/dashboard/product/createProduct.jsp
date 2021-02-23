@@ -35,7 +35,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fab fa-phoenix-framework"></i>
             </div>
@@ -44,16 +44,17 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
+
         <li class="nav-item active">
-            <a class="nav-link" href="../home.jsp">
+            <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Home</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-            <a class="nav-link" href="../index.html">
+        <li class="nav-item active">
+            <a class="nav-link" href="/dashboard">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -61,15 +62,10 @@
         <!-- Divider -->
         <hr class="sidebar-divider">
 
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Addons
-        </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed"
-               data-target="#collapsePages"
+            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed" data-target="#collapsePages"
                data-toggle="collapse" href="#">
                 <i class="fas fa-fw fa-folder"></i>
                 <span>Pages</span>
@@ -78,8 +74,8 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Login Screens:</h6>
 
-                    <a class="collapse-item" href="../login/register.html">Register</a>
-                    <a class="collapse-item" href="../login/forgot-password.html">Forgot Password</a>
+                    <a class="collapse-item" href="login/register.html">Register</a>
+                    <a class="collapse-item" href="login/forgot-password.html">Forgot Password</a>
                     <div class="collapse-divider"></div>
 
                 </div>
@@ -89,13 +85,13 @@
 
         <!-- Nav Item - Tables Product -->
         <li class="nav-item">
-            <a class="nav-link" href="/products">
+            <a class="nav-link" href="/dashboard/product?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Product Management</span></a>
         </li>
         <!-- Nav Item - Tables Customer -->
         <li class="nav-item">
-            <a class="nav-link" href="/login?action=show">
+            <a class="nav-link" href="/dashboard/user?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Customer Management</span></a>
         </li>
@@ -107,6 +103,7 @@
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
+
 
     </ul>
     <!-- End of Sidebar -->
@@ -330,75 +327,69 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Edit Product</h1>
-                <form method="post">
-                    <a href="/products"></a>
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table cellspacing="0" class="table table-bordered" id="dataTable" width="100%">
-                                    <br>
-                                    <div class="col-lg-6">
-                                        <h2>Id</h2>
-                                        <input class="form-control form-control-user" value="${p.getID}"
-                                               required type="text">
-                                        <div id="name-invalid" style="color: red; font-size: small;"></div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-6">
-                                        <h2>Image</h2>
-                                        <input class="form-control form-control-user" value="${p.getImage}"
-                                               required type="text">
-                                        <div id="image-invalid" style="color: red; font-size: small;"></div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-6">
-                                        <h2>Name</h2>
-                                        <input class="form-control form-control-user" value="${p.getName_product}"
-                                               required type="number">
-                                        <div id="quantity-invalid" style="color: red; font-size: small;"></div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-6">
-                                        <h2>Price</h2>
-                                        <input class="form-control form-control-user" value="${p.getPrice}"
-                                               required type="number">
-                                        <div id="price-invalid" style="color: red; font-size: small;"></div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-6">
-                                        <select class="form-control form-control-user" value="${p.getOrigin}"
-                                        >
-                                            <option>Origin</option>
-                                            <option>Viet Nam</option>
-                                            <option>French</option>
-                                            <option>USA</option>
-                                            <option>England</option>
-                                        </select>
-                                        <div id="origin-invalid" style="color: red; font-size: small;"></div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-6">
-                                        <h2>Description</h2>
-                                        <textarea class="form-control form-control-user" value="${p.getDescription}"
-                                                  required rows="3"></textarea>
-                                        <div id="describe-invalid" style="color: red; font-size: small;"></div>
-                                    </div>
-                                    <br>
-                                    <div class="col-lg-6">
-                                        <button class="btn btn-primary" onclick="" style="float: left;"
-                                                target="_blank">
-                                            <i class="far fa-save"></i>
-                                        </button>
-                                    </div>
-                                </table>
-                            </div>
+                <h1 class="h3 mb-2 text-gray-800">Create Product</h1>
+
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table cellspacing="0" class="table table-bordered" id="dataTable" width="100%">
+                                <br>
+                                <div class="col-lg-6">
+                                    <input class="form-control form-control-user" id="name-product"
+                                           placeholder="Name" required type="text">
+                                    <div id="name-invalid" style="color: red; font-size: small;"></div>
+                                </div>
+                                <br>
+                                <div class="col-lg-6">
+                                    <input class="form-control form-control-user" id="image-product"
+                                           placeholder="Image" required type="text">
+                                    <div id="image-invalid" style="color: red; font-size: small;"></div>
+                                </div>
+                                <br>
+                                <div class="col-lg-6">
+                                    <input class="form-control form-control-user" id="quantity-product"
+                                           placeholder="Quantity" required type="number">
+                                    <div id="quantity-invalid" style="color: red; font-size: small;"></div>
+                                </div>
+                                <br>
+                                <div class="col-lg-6">
+                                    <input class="form-control form-control-user" id="price-product"
+                                           placeholder="Price" required type="number">
+                                    <div id="price-invalid" style="color: red; font-size: small;"></div>
+                                </div>
+                                <br>
+                                <div class="col-lg-6">
+
+                                    <select class="form-control form-control-user" id="origin-product"
+                                            placeholder="Origin">
+                                        <option>Origin</option>
+                                        <option>Viet Nam</option>
+                                        <option>French</option>
+                                        <option>USA</option>
+                                        <option>England</option>
+                                    </select>
+                                    <div id="origin-invalid" style="color: red; font-size: small;"></div>
+                                </div>
+                                <br>
+                                <div class="col-lg-6">
+                                        <textarea class="form-control form-control-user" id="describe-product"
+                                                  placeholder="Describe" required rows="3"></textarea>
+                                    <div id="describe-invalid" style="color: red; font-size: small;"></div>
+                                </div>
+                                <br>
+                                <div class="col-lg-6">
+                                    <button class="btn btn-primary" onclick="addNewProduct()" style="float: left;"
+                                            target="_blank" >
+                                        <i class="far fa-save"></i>
+                                    </button>
+                                </div>
+                            </table>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
 
+        </div>
         <!-- End of Main Content -->
 
         <!-- Footer -->
@@ -428,54 +419,18 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <%--            <div>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getId}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getImage}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getName_product}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getPrice}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getOrigin}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getDescription}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--            </div>--%>
-            <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
-            <a class="btn btn-primary" href="../login/login.html">Logout</a>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                <a class="btn btn-primary" href="../login/login.html">Logout</a>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 <!-- Bootstrap core JavaScript-->
