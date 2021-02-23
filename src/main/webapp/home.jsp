@@ -56,7 +56,7 @@
                 localStorage.setItem('username', $('#username').val());
                 localStorage.setItem('idRole', $('#idRole').val());
                 if ($('#username').val() != "") {
-                    $("#login").html('<a href=\'<c:url value="#"/>\'>Chào mừng '+$('#username').val()+'</a>')
+                    $("#login").html('<a href=\'<c:url value="#"/>\'>Chào mừng ' + $('#username').val() + '</a>')
                 }
                 window.history.pushState("object or string", "Title", "http://localhost:8080/home");
 
@@ -189,10 +189,10 @@
         <div class="content">
             <div class="content_top">
                 <div class="heading">
-                    <h3>New Products</h3>
+                    <h3>Danh sách sản phẩm</h3>
                 </div>
                 <div class="see">
-                    <p><a href="#">See all Products</a></p>
+                    <p><a href="#"></a></p>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -211,110 +211,122 @@
                     </div>
 
                 </div>
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="rupees">$899.75</span></p>
+                <div class="row" style=" display: flex;flex-wrap: wrap;justify-content: space-between;">
+                    <div class="col-lg-3 images_1_of_4">
+                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
+                        <h2>Lorem Ipsum is simply </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">$899.75</span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="preview.html">Add to Cart</a></h4>
+                            </div>
+                            <div class="clear"></div>
                         </div>
-                        <div class="add-cart">
-                            <h4><a href="preview.html">Add to Cart</a></h4>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
 
-                </div>
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="images/feature-pic3.jpg" alt=""/></a>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="rupees">$599.00</span></p>
-                        </div>
-                        <div class="add-cart">
-                            <h4><a href="preview.html">Add to Cart</a></h4>
-                        </div>
-                        <div class="clear"></div>
                     </div>
-                </div>
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="images/feature-pic4.jpg" alt=""/></a>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="rupees">$679.87</span></p>
+                    <div class="col-lg-3 images_1_of_4">
+                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
+                        <h2>Lorem Ipsum is simply </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">$899.75</span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="preview.html">Add to Cart</a></h4>
+                            </div>
+                            <div class="clear"></div>
                         </div>
-                        <div class="add-cart">
-                            <h4><a href="preview.html">Add to Cart</a></h4>
+
+                    </div>
+                    <div class="col-lg-3 images_1_of_4">
+                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
+                        <h2>Lorem Ipsum is simply </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">$899.75</span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="preview.html">Add to Cart</a></h4>
+                            </div>
+                            <div class="clear"></div>
                         </div>
-                        <div class="clear"></div>
+
+                    </div>
+                    <div class="col-lg-3 images_1_of_4">
+                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
+                        <h2>Lorem Ipsum is simply </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">$899.75</span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="preview.html">Add to Cart</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 images_1_of_4">
+                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
+                        <h2>Lorem Ipsum is simply </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">$899.75</span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="preview.html">Add to Cart</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 images_1_of_4">
+                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
+                        <h2>Lorem Ipsum is simply </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">$899.75</span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="preview.html">Add to Cart</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 images_1_of_4">
+                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
+                        <h2>Lorem Ipsum is simply </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">$899.75</span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="preview.html">Add to Cart</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 images_1_of_4">
+                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
+                        <h2>Lorem Ipsum is simply </h2>
+                        <div class="price-details">
+                            <div class="price-number">
+                                <p><span class="rupees">$899.75</span></p>
+                            </div>
+                            <div class="add-cart">
+                                <h4><a href="preview.html">Add to Cart</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="content_bottom">
-                <div class="heading">
-                    <h3>Feature Products</h3>
-                </div>
-                <div class="see">
-                    <p><a href="#">See all Products</a></p>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="section group">
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="images/new-pic1.jpg" alt=""/></a>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="rupees">$849.99</span></p>
-                        </div>
-                        <div class="add-cart">
-                            <h4><a href="preview.html">Add to Cart</a></h4>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="images/new-pic2.jpg" alt=""/></a>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="rupees">$599.99</span></p>
-                        </div>
-                        <div class="add-cart">
-                            <h4><a href="preview.html">Add to Cart</a></h4>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="images/new-pic4.jpg" alt=""/></a>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="rupees">$799.99</span></p>
-                        </div>
-                        <div class="add-cart">
-                            <h4><a href="preview.html">Add to Cart</a></h4>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="images/new-pic3.jpg" alt=""/></a>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="rupees">$899.99</span></p>
-                        </div>
-                        <div class="add-cart">
-                            <h4><a href="preview.html">Add to Cart</a></h4>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
