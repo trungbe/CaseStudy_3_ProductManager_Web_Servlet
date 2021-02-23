@@ -63,8 +63,6 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = loginService.login(username, password);
-
-
         if (user == null) {
             response.sendRedirect("/login");
         }

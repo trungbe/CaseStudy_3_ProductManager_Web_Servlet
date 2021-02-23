@@ -4,9 +4,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML>
 <head>
-    <title>Free Home Shoppe Website Template | Preview :: w3layouts</title>
+    <title>Product Details</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -37,15 +38,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="header">
         <div class="headertop_desc">
             <div class="call">
-                <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>
+                <p><span>Need help?</span> call 16-17-34 Team  <span class="number">1900 1010</span></p>
             </div>
             <div class="account_desc">
                 <ul>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Delivery</a></li>
-                    <li><a href="#">Checkout</a></li>
-                    <li><a href="#">My Account</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <!--                    <li><a href="#">Delivery</a></li>-->
+                    <!--                    <li><a href="#">My Account</a></li>-->
+                    <li id="login"><a href='<c:url value="/login"/>'>Login</a></li>
+                    <li><a href="/login">Logout</a></li>
                 </ul>
             </div>
             <div class="clear"></div>
@@ -125,21 +126,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <div id="products_example">
                                     <div id="products">
                                         <div class="slides_container">
-                                            <a href="#" target="_blank"><img src="images/productslide-1.jpg" alt=" " /></a>
-                                            <a href="#" target="_blank"><img src="images/productslide-2.jpg" alt=" " /></a>
-                                            <a href="#" target="_blank"><img src="images/productslide-3.jpg" alt=" " /></a>
-                                            <a href="#" target="_blank"><img src="images/productslide-4.jpg" alt=" " /></a>
-                                            <a href="#" target="_blank"><img src="images/productslide-5.jpg" alt=" " /></a>
-                                            <a href="#" target="_blank"><img src="images/productslide-6.jpg" alt=" " /></a>
+                                            <a href="#" target="_blank"><img style="height: 250px;width: 300px;object-fit: contain" src="${p.getImage()}" alt=" " /></a>
                                         </div>
-                                        <ul class="pagination">
-                                            <li><a href="#"><img src="images/thumbnailslide-1.jpg" alt=" " /></a></li>
-                                            <li><a href="#"><img src="images/thumbnailslide-2.jpg" alt=" " /></a></li>
-                                            <li><a href="#"><img src="images/thumbnailslide-3.jpg" alt=" " /></a></li>
-                                            <li><a href="#"><img src="images/thumbnailslide-4.jpg" alt=" " /></a></li>
-                                            <li><a href="#"><img src="images/thumbnailslide-5.jpg" alt=" " /></a></li>
-                                            <li><a href="#"><img src="images/thumbnailslide-6.jpg" alt=" " /></a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>

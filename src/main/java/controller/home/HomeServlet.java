@@ -26,13 +26,31 @@ public class HomeServlet extends HttpServlet {
         }
         switch (action) {
             case "": {
-
                 showHome(request, response);
+                break;
+            }
+            case "detail": {
+                showDetail(request, response);
                 break;
             }
 
         }
 
+    }
+
+    private void showDetail(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product product = serviceProduct.findById(id);
+        RequestDispatcher requestDispatcher;
+        request.setAttribute("p",product);
+        requestDispatcher = request.getRequestDispatcher("detail/detail.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

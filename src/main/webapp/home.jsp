@@ -26,7 +26,7 @@
     <div class="header">
         <div class="headertop_desc">
             <div class="call">
-                <%--                <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></span></p>--%>
+                <p><span>Need help?</span> call 16-17-34 Team  <span class="number">1900 1010</span></p>
             </div>
             <div class="account_desc">
                 <ul>
@@ -200,14 +200,14 @@
                 <div class="row" style=" display: flex;flex-wrap: wrap;">
                     <c:forEach items="${p}" var="product">
                         <div class="col-lg-3 images_1_of_4" style="margin:5px;box-shadow: 0px 0px 3px rgb(150 150 150);">
-                            <a href="/detail/detail.jsp"><img style="width: 200px;height: 200px; object-fit: contain" src="${product.getImage()}" alt=""/></a>
+                            <a href="/home?action=detail&id=${product.getId()}"><img style="width: 200px;height: 200px; object-fit: contain" src="${product.getImage()}" alt=""/></a>
                             <h2>${product.getName_product()}</h2>
                             <div class="price-details">
                                 <div class="price-number">
                                     <p><span class="rupees">$${product.getPrice()}</span></p>
                                 </div>
                                 <div class="add-cart">
-                                    <h4><a href="/detail/detail.jsp">Add to Cart</a></h4>
+                                    <h4><a href="/home?action=detail&id=${product.getId()}">Add to Cart</a></h4>
                                 </div>
                                 <div class="clear"></div>
                             </div>
