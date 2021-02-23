@@ -79,7 +79,7 @@
 
         <!-- Nav Item - Tables Product -->
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="/products">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Product Management</span></a>
         </li>

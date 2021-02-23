@@ -48,7 +48,7 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
         <li class="nav-item active">
-            <a class="nav-link" href="../home.html">
+            <a class="nav-link" href="../home.jsp">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Home</span></a>
         </li>
@@ -92,13 +92,13 @@
 
         <!-- Nav Item - Tables Product -->
         <li class="nav-item">
-            <a class="nav-link" href="list-edit-del-product.html">
+            <a class="nav-link" href="/products">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Product Management</span></a>
         </li>
         <!-- Nav Item - Tables Customer -->
         <li class="nav-item">
-            <a class="nav-link" href="list-customer.html">
+            <a class="nav-link" href="/login?action=show">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Customer Management</span></a>
         </li>
@@ -217,36 +217,39 @@
                             <table cellspacing="0" class="table table-bordered" id="dataTable" width="100%">
                                 <thead>
                                 <tr>
-                                    <th>Id</th>
+<%--                                    <th>Id</th>--%>
+                                    <th>Image</th>
                                     <th>Name_Product</th>
                                     <th>Price</th>
                                     <th>Origin</th>
                                     <th>Description</th>
-                                    <th>Image</th>
+
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>Id</th>
+<%--                                    <th>Id</th>--%>
+                                    <th>Image</th>
                                     <th>Name_Product</th>
                                     <th>Price</th>
                                     <th>Origin</th>
                                     <th>Description</th>
-                                    <th>Image</th>
+
                                 </tr>
                                 </tfoot>
                                 <!-- display list product -->
-                                <tbody id="display-product">
+                                <tbody>
                                 <c:forEach items="${p}" var="product">
                                     <tr>
-                                        <td>${product.getId()}</td>
+<%--                                        <td>${product.getId()}</td>--%>
+                                        <td>${product.getImage()}</td>
                                         <td>${product.getName_product()}</td>
                                         <td>${product.getPrice()}</td>
                                         <td>${product.getOrigin()}</td>
                                         <td>${product.getDescription()}</td>
-                                        <td>${product.getImage()}</td>
+
 <%--                                        <td><a href="/products?action=edit&id=${product.getId()}">Edit</a></td>--%>
-                                        <td><button class="btn btn-info" data-toggle="modal" data-target="#exampleModal"><a href="/products?action=edit&id=${product.getId()}"></a>Edit</button></td>
+                                        <td><button><a href="/product/editProduct.jsp">Edit</a></button></td>
                                         <td><a href="/products?action=delete&id=${product.getId()}">Delete</a></td>
                                     </tr>
                                 </c:forEach>

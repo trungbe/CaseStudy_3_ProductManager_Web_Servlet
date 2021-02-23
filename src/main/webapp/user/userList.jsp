@@ -91,13 +91,13 @@
 
         <!-- Nav Item - Tables Product -->
         <li class="nav-item">
-            <a class="nav-link" href="list-edit-del-product.html">
+            <a class="nav-link" href="/products">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Product Management</span></a>
         </li>
         <!-- Nav Item - Tables Customer -->
         <li class="nav-item">
-            <a class="nav-link" href="list-customer.html">
+            <a class="nav-link" href="/login?action=show">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Customer Management</span></a>
         </li>
@@ -205,7 +205,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">List Product</h1>
+                <h1 class="h3 mb-2 text-gray-800">List User</h1>
 
                 <!-- DataTales  -->
                 <div class="card shadow mb-4">
@@ -236,7 +236,7 @@
                                 <tbody >
                                 <c:forEach items="${userList}" var="user">
                                     <tr>
-                                        <td>${user.getID}</td>
+                                        <td>${user.getId_user()}</td>
                                         <td>${user.getUsername()}</td>
                                         <td>${user.getPassword()}</td>
                                         <td>${user.getFullname()}</td>
