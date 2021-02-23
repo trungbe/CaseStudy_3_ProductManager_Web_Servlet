@@ -47,9 +47,8 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
-
         <li class="nav-item active">
-            <a class="nav-link" href="../home.jsp">
+            <a class="nav-link" href="/home">
             <a class="nav-link" href="/">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Home</span></a>
@@ -89,14 +88,12 @@
 
         <!-- Nav Item - Tables Product -->
         <li class="nav-item">
-            <a class="nav-link" href="/products">
             <a class="nav-link" href="/dashboard/product?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Product Management</span></a>
         </li>
         <!-- Nav Item - Tables Customer -->
         <li class="nav-item">
-            <a class="nav-link" href="/login?action=show">
             <a class="nav-link" href="/dashboard/user?action=showAll">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Customer Management</span></a>
@@ -124,18 +121,21 @@
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                 <!-- Sidebar Toggle (Topbar) -->
-                <form class="form-inline">
-                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </form>
+                <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop">
+                    <i class="fa fa-bars"></i>
+                </button>
 
-                <!-- Topbar Create -->
-                <form>
-                    <div class="input-group-append">
-                        <a class="btn btn-primary" href="add-product.html" type="button">
-                            <i class="fas fa-plus-circle"></i>
-                        </a>
+                <!-- Topbar Search -->
+                <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                        <input aria-describedby="basic-addon2" aria-label="Search" class="form-control bg-light border-0 small"
+                               placeholder="Search for..." type="text">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
                     </div>
                 </form>
 
@@ -166,6 +166,130 @@
                             </form>
                         </div>
                     </li>
+
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                           href="#" id="alertsDropdown" role="button">
+                            <i class="fas fa-bell fa-fw"></i>
+                            <!-- Counter - Alerts -->
+                            <span class="badge badge-danger badge-counter">3+</span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        <div aria-labelledby="alertsDropdown"
+                             class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                            <h6 class="dropdown-header">
+                                Alerts Center
+                            </h6>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="mr-3">
+                                    <div class="icon-circle bg-primary">
+                                        <i class="fas fa-file-alt text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="small text-gray-500">December 12, 2019</div>
+                                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="mr-3">
+                                    <div class="icon-circle bg-success">
+                                        <i class="fas fa-donate text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="small text-gray-500">December 7, 2019</div>
+                                    $290.29 has been deposited into your account!
+                                </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="mr-3">
+                                    <div class="icon-circle bg-warning">
+                                        <i class="fas fa-exclamation-triangle text-white"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="small text-gray-500">December 2, 2019</div>
+                                    Spending Alert: We've noticed unusually high spending for your account.
+                                </div>
+                            </a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                        </div>
+                    </li>
+
+                    <!-- Nav Item - Messages -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                           href="#" id="messagesDropdown" role="button">
+                            <i class="fas fa-envelope fa-fw"></i>
+                            <!-- Counter - Messages -->
+                            <span class="badge badge-danger badge-counter">7</span>
+                        </a>
+                        <!-- Dropdown - Messages -->
+                        <div aria-labelledby="messagesDropdown"
+                             class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                            <h6 class="dropdown-header">
+                                Message Center
+                            </h6>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="dropdown-list-image mr-3">
+                                    <img alt="" class="rounded-circle"
+                                         src="../img/undraw_profile_1.svg">
+                                    <div class="status-indicator bg-success"></div>
+                                </div>
+                                <div class="font-weight-bold">
+                                    <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                        problem I've been having.
+                                    </div>
+                                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="dropdown-list-image mr-3">
+                                    <img alt="" class="rounded-circle"
+                                         src="../img/undraw_profile_2.svg">
+                                    <div class="status-indicator"></div>
+                                </div>
+                                <div>
+                                    <div class="text-truncate">I have the photos that you ordered last month, how
+                                        would you like them sent to you?
+                                    </div>
+                                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="dropdown-list-image mr-3">
+                                    <img alt="" class="rounded-circle"
+                                         src="../img/undraw_profile_3.svg">
+                                    <div class="status-indicator bg-warning"></div>
+                                </div>
+                                <div>
+                                    <div class="text-truncate">Last month's report looks great, I am very happy with
+                                        the progress so far, keep up the good work!
+                                    </div>
+                                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <div class="dropdown-list-image mr-3">
+                                    <img alt="" class="rounded-circle"
+                                         src="https://source.unsplash.com/Mv9hjnEUHR4/60x60">
+                                    <div class="status-indicator bg-success"></div>
+                                </div>
+                                <div>
+                                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                        told me that people say this to all dogs, even if they aren't good...
+                                    </div>
+                                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                                </div>
+                            </a>
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                        </div>
+                    </li>
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
                         <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
@@ -191,8 +315,7 @@
                                 Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal"
-                               href="../login/login.html">
+                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="/login?action=login">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
@@ -225,7 +348,6 @@
                                     <th>Image</th>
                                     <th></th>
                                     <th></th>
-
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -386,7 +508,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
-                <a class="btn btn-primary" href="../login/login.html" >Logout</a>
+                <a class="btn btn-primary" href="/login">Logout</a>
             </div>
         </div>
     </div>

@@ -29,7 +29,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fab fa-phoenix-framework"></i>
             </div>
@@ -40,7 +40,7 @@
         <hr class="sidebar-divider my-0">
 
         <li class="nav-item active">
-            <a class="nav-link" href="/">
+            <a class="nav-link" href="../home.jsp">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Home</span></a>
         </li>
@@ -48,7 +48,7 @@
         <hr class="sidebar-divider my-0">
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="index.jsp">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -690,7 +690,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
-                <a class="btn btn-primary" href="/login?action=login">Logout</a>
+                <a class="btn btn-primary" href="/login">Logout</a>
             </div>
         </div>
     </div>

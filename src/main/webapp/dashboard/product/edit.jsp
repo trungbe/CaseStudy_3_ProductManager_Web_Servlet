@@ -119,18 +119,21 @@
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                 <!-- Sidebar Toggle (Topbar) -->
-                <form class="form-inline">
-                    <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </form>
+                <button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop">
+                    <i class="fa fa-bars"></i>
+                </button>
 
                 <!-- Topbar Search -->
-                <form>
-                    <div class="input-group-append">
-                        <a class="btn btn-primary" href="/dashboard/product" type="button">
-                            <i class="fas fa-undo"></i>
-                        </a>
+                <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                        <input aria-describedby="basic-addon2" aria-label="Search" class="form-control bg-light border-0 small"
+                               placeholder="Search for..." type="text">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
                     </div>
                 </form>
 
@@ -139,8 +142,7 @@
 
                     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                     <li class="nav-item dropdown no-arrow d-sm-none">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
-                           data-toggle="dropdown"
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
                            href="#" id="searchDropdown" role="button">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
@@ -164,8 +166,7 @@
 
                     <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
-                           data-toggle="dropdown"
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
                            href="#" id="alertsDropdown" role="button">
                             <i class="fas fa-bell fa-fw"></i>
                             <!-- Counter - Alerts -->
@@ -216,8 +217,7 @@
 
                     <!-- Nav Item - Messages -->
                     <li class="nav-item dropdown no-arrow mx-1">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
-                           data-toggle="dropdown"
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
                            href="#" id="messagesDropdown" role="button">
                             <i class="fas fa-envelope fa-fw"></i>
                             <!-- Counter - Messages -->
@@ -232,7 +232,7 @@
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="dropdown-list-image mr-3">
                                     <img alt="" class="rounded-circle"
-                                         src="../../img/undraw_profile_1.svg">
+                                         src="../img/undraw_profile_1.svg">
                                     <div class="status-indicator bg-success"></div>
                                 </div>
                                 <div class="font-weight-bold">
@@ -245,7 +245,7 @@
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="dropdown-list-image mr-3">
                                     <img alt="" class="rounded-circle"
-                                         src="../../img/undraw_profile_2.svg">
+                                         src="../img/undraw_profile_2.svg">
                                     <div class="status-indicator"></div>
                                 </div>
                                 <div>
@@ -258,7 +258,7 @@
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="dropdown-list-image mr-3">
                                     <img alt="" class="rounded-circle"
-                                         src="../../img/undraw_profile_3.svg">
+                                         src="../img/undraw_profile_3.svg">
                                     <div class="status-indicator bg-warning"></div>
                                 </div>
                                 <div>
@@ -289,12 +289,11 @@
 
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
-                           data-toggle="dropdown"
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
                            href="#" id="userDropdown" role="button">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
                             <img class="img-profile rounded-circle"
-                                 src="../../img/undraw_profile.svg">
+                                 src="../img/undraw_profile.svg">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div aria-labelledby="userDropdown"
@@ -312,7 +311,7 @@
                                 Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="#">
+                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="/login?action=login">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
@@ -425,51 +424,16 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <%--            <div>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getId}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getImage}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getName_product}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getPrice}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getOrigin}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--                <div class="modal-body"></div>--%>
-            <%--                <div class="col-lg-12">--%>
-            <%--                    <input class="form-control form-control-user" value="${p.getDescription}"--%>
-            <%--                           readonly="" type="number">--%>
-            <%--                </div>--%>
-            <%--                <br>--%>
-            <%--            </div>--%>
-            <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
-            <a class="btn btn-primary" href="../login/login.html">Logout</a>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                <a class="btn btn-primary" href="/login">Logout</a>
+            </div>
         </div>
     </div>
 </div>
