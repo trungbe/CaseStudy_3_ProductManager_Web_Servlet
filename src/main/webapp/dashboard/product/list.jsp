@@ -26,7 +26,9 @@
     <!-- Custom styles for this page -->
     <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+          crossorigin="anonymous"/>
 </head>
 
 <body id="page-top">
@@ -49,9 +51,9 @@
         <hr class="sidebar-divider my-0">
         <li class="nav-item active">
             <a class="nav-link" href="/home">
-            <a class="nav-link" href="/">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Home</span></a>
+                <a class="nav-link" href="/">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Home</span></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -68,7 +70,8 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed" data-target="#collapsePages"
+            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed"
+               data-target="#collapsePages"
                data-toggle="collapse" href="#">
                 <i class="fas fa-fw fa-folder"></i>
                 <span>Pages</span>
@@ -129,7 +132,8 @@
                 <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group">
-                        <input aria-describedby="basic-addon2" aria-label="Search" class="form-control bg-light border-0 small"
+                        <input aria-describedby="basic-addon2" aria-label="Search"
+                               class="form-control bg-light border-0 small"
                                placeholder="Search for..." type="text">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button">
@@ -144,7 +148,8 @@
 
                     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                     <li class="nav-item dropdown no-arrow d-sm-none">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                           data-toggle="dropdown"
                            href="#" id="searchDropdown" role="button">
                             <i class="fas fa-search fa-fw"></i>
                         </a>
@@ -168,7 +173,8 @@
 
                     <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                           data-toggle="dropdown"
                            href="#" id="alertsDropdown" role="button">
                             <i class="fas fa-bell fa-fw"></i>
                             <!-- Counter - Alerts -->
@@ -219,7 +225,8 @@
 
                     <!-- Nav Item - Messages -->
                     <li class="nav-item dropdown no-arrow mx-1">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                           data-toggle="dropdown"
                            href="#" id="messagesDropdown" role="button">
                             <i class="fas fa-envelope fa-fw"></i>
                             <!-- Counter - Messages -->
@@ -291,7 +298,8 @@
 
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
-                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+                           data-toggle="dropdown"
                            href="#" id="userDropdown" role="button">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
                             <img class="img-profile rounded-circle"
@@ -313,7 +321,7 @@
                                 Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="/login?action=login">
+                            <a class="dropdown-item" data-target="#logoutModal" data-toggle="modal" href="/login">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
                             </a>
@@ -346,6 +354,7 @@
                                     <th>Image</th>
                                     <th></th>
                                     <th></th>
+
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -369,11 +378,50 @@
                                         <td>${product.getPrice()}</td>
                                         <td>${product.getOrigin()}</td>
                                         <td>${product.getDescription()}</td>
-                                        <td><img src="${product.getImage()}" alt="" style="height:200px;object-fit: cover"></td>
-                                        <td><a class="btn btn-info" href="/dashboard/product?action=edit&id=${product.getId()}">Edit</a></td>
-                                        <td><a class="btn btn-danger" href="">Delete</a></td>
-
+                                        <td><img src="${product.getImage()}" alt=""
+                                                 style="height:200px;object-fit: cover"></td>
+                                        <td><a class="btn btn-info"
+                                               href="/dashboard/product?action=edit&id=${product.getId()}">Edit</a></td>
+                                        <td><a data-toggle="modal" data-target="#exampleModal1"
+                                               onclick="showFormDelete(${product.getId()})"
+                                               class="btn btn-danger">Delete</a></td>
                                     </tr>
+                                    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade"
+                                         id="exampleModal1" role="dialog"
+                                         tabindex="-1">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" >Thông báo</h5>
+                                                    <input type="hidden" id="idForDelete">
+                                                    <button aria-label="Close" class="close" data-dismiss="modal"
+                                                            type="button">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body" id="exampleModalLabelX"></div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" data-dismiss="modal"
+                                                            type="button"><i class="fas fa-window-close"></i>
+                                                    </button>
+                                                    <button class="btn btn-primary"
+                                                            onclick="deleteProduct()" type="button"><i
+                                                            class="fas fa-trash-alt"></i></button>
+                                                </div>
+                                                <script>
+                                                    function showFormDelete(id) {
+                                                        $("#exampleModalLabelX").html('Bạn có muốn xóa sản phẩm có id = ' + id + '?')
+                                                        $('#idForDelete').val(id)
+                                                    }
+
+                                                    function deleteProduct() {
+                                                        window.location.href = '/dashboard/product?action=delete&id=' + $('#idForDelete').val();
+                                                    }
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </c:forEach>
                                 </tbody>
                             </table>
@@ -449,31 +497,15 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button"><i class="fas fa-window-close"></i></button>
-                <button class="btn btn-primary" onclick="editProduct()" type="button"><i class="far fa-save"></i></button>
+                <button class="btn btn-secondary" data-dismiss="modal" type="button"><i class="fas fa-window-close"></i>
+                </button>
+                <button class="btn btn-primary" onclick="editProduct()" type="button"><i class="far fa-save"></i>
+                </button>
             </div>
         </div>
     </div>
 </div>
 <!-- Delete Modal -->
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal1" role="dialog"
-     tabindex="-1">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Delete?</h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select icon "Delete" below if you are ready to delete your current product.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal" type="button"><i class="fas fa-window-close"></i></button>
-                <button class="btn btn-primary"  onclick="deleteProduct()" type="button"><i class="fas fa-trash-alt"></i></button>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">

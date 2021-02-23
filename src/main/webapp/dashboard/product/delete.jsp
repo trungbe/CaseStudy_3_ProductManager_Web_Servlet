@@ -7,7 +7,6 @@
 <body>
 <h1>Delete  product</h1>
 <form method="post">
-<a href="/products">List product</a>
 <table>
     <tr>
         <td>Name</td>

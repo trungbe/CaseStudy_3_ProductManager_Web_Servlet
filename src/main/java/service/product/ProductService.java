@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceProduct implements IServiceProduct {
+public class ProductService implements IProductService {
     private static final String SELECT_ALL_PRODUCT = "select * from product";
     public static final String CREATE_NEW_PRODUCT = "insert into product(name_product,price,origin,description,image) values (?,?,?,?,?)";
     public static final String FIND_PRODUCT_BY_ID = "select  * from product where id=? ";
@@ -99,7 +99,8 @@ public class ServiceProduct implements IServiceProduct {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_PRODUCT);
             preparedStatement.setInt(1, id);
-            check = preparedStatement.executeUpdate() > 0;
+            preparedStatement.execute();
+            check = true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

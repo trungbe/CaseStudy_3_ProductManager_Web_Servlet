@@ -197,133 +197,23 @@
                 <div class="clear"></div>
             </div>
             <div class="section group">
-                <div class="grid_1_of_4 images_1_of_4">
-                    <a href="preview.html"><img src="images/feature-pic1.jpg" alt=""/></a>
-                    <h2>Lorem Ipsum is simply </h2>
-                    <div class="price-details">
-                        <div class="price-number">
-                            <p><span class="rupees">$620.87</span></p>
-                        </div>
-                        <div class="add-cart">
-                            <h4><a href="preview.html">Add to Cart</a></h4>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+                <div class="row" style=" display: flex;flex-wrap: wrap;">
+                    <c:forEach items="${p}" var="product">
+                        <div class="col-lg-3 images_1_of_4" style="margin:5px;box-shadow: 0px 0px 3px rgb(150 150 150);">
+                            <a href="/detail/detail.jsp"><img style="width: 200px;height: 200px; object-fit: contain" src="${product.getImage()}" alt=""/></a>
+                            <h2>${product.getName_product()}</h2>
+                            <div class="price-details">
+                                <div class="price-number">
+                                    <p><span class="rupees">$${product.getPrice()}</span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4><a href="/detail/detail.jsp">Add to Cart</a></h4>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
 
-                </div>
-                <div class="row" style=" display: flex;flex-wrap: wrap;justify-content: space-between;">
-                    <div class="col-lg-3 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.75</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
                         </div>
-
-                    </div>
-                    <div class="col-lg-3 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.75</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-3 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.75</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-3 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.75</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-3 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.75</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-3 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.75</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-3 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.75</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-3 images_1_of_4">
-                        <a href="preview.html"><img src="images/feature-pic2.jpg" alt=""/></a>
-                        <h2>Lorem Ipsum is simply </h2>
-                        <div class="price-details">
-                            <div class="price-number">
-                                <p><span class="rupees">$899.75</span></p>
-                            </div>
-                            <div class="add-cart">
-                                <h4><a href="preview.html">Add to Cart</a></h4>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-
-                    </div>
+                    </c:forEach>
                 </div>
             </div>
 
