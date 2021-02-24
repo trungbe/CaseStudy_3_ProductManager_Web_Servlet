@@ -34,7 +34,7 @@
                     <!--                    <li><a href="#">Delivery</a></li>-->
                     <!--                    <li><a href="#">My Account</a></li>-->
                     <li id="login"><a href='<c:url value="/login"/>'>Login</a></li>
-                    <li><a href="/login">Logout</a></li>
+                    <li><a href="/logout.jsp">Logout</a></li>
                 </ul>
             </div>
             <div class="clear"></div>
@@ -53,10 +53,12 @@
                 </p>
             </div>
             <script type="text/javascript">
-                localStorage.setItem('username', $('#username').val());
-                localStorage.setItem('idRole', $('#idRole').val());
-                if ($('#username').val() != "") {
-                    $("#login").html('<a href=\'<c:url value="#"/>\'>Chào mừng ' + $('#username').val() + '</a>')
+                if (localStorage.getItem("username") == "") {
+                    localStorage.setItem('username', $('#username').val());
+                    localStorage.setItem('idRole', $('#idRole').val());
+                }
+                if (localStorage.getItem("username") != "") {
+                    $("#login").html('<a href=\'<c:url value="#"/>\'>Welcome ' + localStorage.getItem("username") + '</a>')
                 }
                 window.history.pushState("object or string", "Title", "http://localhost:8080/home");
 

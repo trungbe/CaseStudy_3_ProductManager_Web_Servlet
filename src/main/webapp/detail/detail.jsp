@@ -46,7 +46,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <!--                    <li><a href="#">Delivery</a></li>-->
                     <!--                    <li><a href="#">My Account</a></li>-->
                     <li id="login"><a href='<c:url value="/login"/>'>Login</a></li>
-                    <li><a href="/login">Logout</a></li>
+                    <li><a href="/logout.jsp">Logout</a></li>
                 </ul>
             </div>
             <div class="clear"></div>
@@ -279,6 +279,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                     </div>
                     <script type="text/javascript">
+                        if (localStorage.getItem("username") != "") {
+                            $("#login").html('<a href=\'<c:url value="#"/>\'>Welcome ' + localStorage.getItem("username") + '</a>')
+                        }
                         $(document).ready(function () {
                             $('#horizontalTab').easyResponsiveTabs({
                                 type: 'default', //Types: default, vertical, accordion
@@ -444,13 +447,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <p>&copy; 2013 home_shoppe. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
     </div>
 </div>
+
+<a href="#" id="toTop"><span id="toTopHover"> </span></a>
 <script type="text/javascript">
+
     $(document).ready(function () {
         $().UItoTop({easingType: 'easeOutQuart'});
 
     });
 </script>
-<a href="#" id="toTop"><span id="toTopHover"> </span></a>
 </body>
 </html>
 
