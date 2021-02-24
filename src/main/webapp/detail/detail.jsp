@@ -45,6 +45,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <li><a href="/register">Register</a></li>
                     <!--                    <li><a href="#">Delivery</a></li>-->
                     <!--                    <li><a href="#">My Account</a></li>-->
+                    <!--                    <li><a href="#">My Account</a></li>-->
                     <li id="login"><a href='<c:url value="/login"/>'>Login</a></li>
                     <li><a href="/logout.jsp">Logout</a></li>
                 </ul>
