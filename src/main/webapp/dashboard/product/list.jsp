@@ -335,7 +335,13 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-
+                <form>
+                    <div class="input-group-append">
+                        <a class="btn btn-primary" href="/dashboard/product?action=create" type="button">
+                            <i class="fas fa-plus-circle"></i>
+                        </a>
+                    </div>
+                </form>
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">List Product</h1>
 
