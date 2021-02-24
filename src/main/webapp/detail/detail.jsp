@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <head>
     <title>Product Details</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
@@ -19,7 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link rel="stylesheet" href="css/global.css">
     <script src="js/slides.min.jquery.js"></script>
     <script>
-        $(function(){
+        $(function () {
             $('#products').slides({
                 preload: true,
                 preloadImage: 'img/loading.gif',
@@ -38,7 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="header">
         <div class="headertop_desc">
             <div class="call">
-                <p><span>Need help?</span> call 16-17-34 Team  <span class="number">1900 1010</span></p>
+                <p><span>Need help?</span> call 16-17-34 Team <span class="number">1900 1010</span></p>
             </div>
             <div class="account_desc">
                 <ul>
@@ -53,35 +53,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
         <div class="header_top">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                <a href="/home"><img src="images/logo.png" alt=""/></a>
             </div>
             <div class="cart">
-                <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
-                <ul class="dropdown">
-                    <li>you have no items in your Shopping cart</li>
-                </ul></div></p>
+                <p>Welcome to our Online Store! <span>Cart:</span>
+                <div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
+                    <ul class="dropdown">
+                        <li>you have no items in your Shopping cart</li>
+                    </ul>
+                </div>
+                </p>
             </div>
             <script type="text/javascript">
                 function DropDown(el) {
                     this.dd = el;
                     this.initEvents();
                 }
+
                 DropDown.prototype = {
-                    initEvents : function() {
+                    initEvents: function () {
                         var obj = this;
 
-                        obj.dd.on('click', function(event){
+                        obj.dd.on('click', function (event) {
                             $(this).toggleClass('active');
                             event.stopPropagation();
                         });
                     }
                 }
 
-                $(function() {
+                $(function () {
 
-                    var dd = new DropDown( $('#dd') );
+                    var dd = new DropDown($('#dd'));
 
-                    $(document).click(function() {
+                    $(document).click(function () {
                         // all dropdowns
                         $('.wrapper-dropdown-2').removeClass('active');
                     });
@@ -94,7 +98,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="header_bottom">
             <div class="menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/home">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="delivery.html">Delivery</a></li>
                     <li><a href="news.html">News</a></li>
@@ -104,7 +108,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="search_box">
                 <form>
-                    <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+                    <input type="text" value="Search" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
                 </form>
             </div>
             <div class="clear"></div>
@@ -126,18 +131,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <div id="products_example">
                                     <div id="products">
                                         <div class="slides_container">
-                                            <a href="#" target="_blank"><img style="height: 250px;width: 300px;object-fit: contain" src="${p.getImage()}" alt=" " /></a>
+                                            <a href="#" target="_blank"><img
+                                                    style="height: 250px;width: 300px;object-fit: contain"
+                                                    src="${p.getImage()}" alt=" "/></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="desc span_3_of_2">
-                            <h2>Lorem Ipsum is simply dummy text </h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                            <div class="price">
-                                <p>Price: <span>$500</span></p>
-                            </div>
+                                <h2>${p.getName_product()} </h2>
+                                <p>${p.getDescription()}</p>
+                                <div class="price">
+                                    <p>Price: <span>$${p.getPrice()}</span></p>
+                                </div>
+
                             <div class="available">
                                 <p>Available Options :</p>
                                 <ul>
@@ -168,8 +176,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <div class="share">
                                     <p>Share Product :</p>
                                     <ul>
-                                        <li><a href="#"><img src="images/facebook.png" alt="" /></a></li>
-                                        <li><a href="#"><img src="images/twitter.png" alt="" /></a></li>
+                                        <li><a href="#"><img src="images/facebook.png" alt=""/></a></li>
+                                        <li><a href="#"><img src="images/twitter.png" alt=""/></a></li>
                                     </ul>
                                 </div>
                                 <div class="button"><span><a href="#">Add to Cart</a></span></div>
@@ -194,12 +202,38 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </ul>
                             <div class="resp-tabs-container">
                                 <div class="product-desc">
-                                    <p>Lorem Ipsum is simply dummy text of the <span>printing and typesetting industry</span>. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <span>when an unknown printer took a galley of type and scrambled</span> it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<span> It has survived not only five centuries</span>, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>					</div>
+                                    <p>Lorem Ipsum is simply dummy text of the
+                                        <span>printing and typesetting industry</span>. Lorem Ipsum has been the
+                                        industry's standard dummy text ever since the 1500s, when an unknown printer
+                                        took a galley of type and scrambled it to make a type specimen book. It has
+                                        survived not only five centuries, but also the leap into electronic typesetting,
+                                        remaining essentially unchanged.</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, <span>when an unknown printer took a galley of type and scrambled</span>
+                                        it to make a type specimen book. It has survived not only five centuries, but
+                                        also the leap into electronic typesetting, remaining essentially unchanged.Lorem
+                                        Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                        has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of
+                                        the printing and typesetting industry. Lorem Ipsum has been the industry's
+                                        standard dummy text ever since the 1500s, when an unknown printer took a galley
+                                        of type and scrambled it to make a type specimen book.<span> It has survived not only five centuries</span>,
+                                        but also the leap into electronic typesetting, remaining essentially unchanged.
+                                    </p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p></div>
 
                                 <div class="product-tags">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
                                     <h4>Add Your Tags:</h4>
                                     <div class="input-box">
                                         <input type="text" value="">
@@ -210,11 +244,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <div class="review">
                                     <h4>Lorem ipsum Review by <a href="#">Finibus Bonorum</a></h4>
                                     <ul>
-                                        <li>Price :<a href="#"><img src="images/price-rating.png" alt="" /></a></li>
-                                        <li>Value :<a href="#"><img src="images/value-rating.png" alt="" /></a></li>
-                                        <li>Quality :<a href="#"><img src="images/quality-rating.png" alt="" /></a></li>
+                                        <li>Price :<a href="#"><img src="images/price-rating.png" alt=""/></a></li>
+                                        <li>Value :<a href="#"><img src="images/value-rating.png" alt=""/></a></li>
+                                        <li>Quality :<a href="#"><img src="images/quality-rating.png" alt=""/></a></li>
                                     </ul>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged.</p>
                                     <div class="your-review">
                                         <h3>How Do You Rate This Product?</h3>
                                         <p>Write Your Own Review?</p>
@@ -223,7 +261,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 <span><label>Nickname<span class="red">*</span></label></span>
                                                 <span><input type="text" value=""></span>
                                             </div>
-                                            <div><span><label>Summary of Your Review<span class="red">*</span></label></span>
+                                            <div><span><label>Summary of Your Review<span
+                                                    class="red">*</span></label></span>
                                                 <span><input type="text" value=""></span>
                                             </div>
                                             <div>
@@ -258,41 +297,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="clear"></div>
                     </div>
                     <div class="section group">
-                        <div class="grid_1_of_4 images_1_of_4">
-                            <a href="#"><img src="images/new-pic1.jpg" alt=""></a>
-                            <div class="price" style="border:none">
-                                <div class="add-cart" style="float:none">
-                                    <h4><a href="#">Add to Cart</a></h4>
+                        <div class="row" style=" display: flex;flex-wrap: wrap;">
+                            <c:forEach items="${p}" var="product">
+                                <div class="col-lg-3 images_1_of_4"
+                                     style="margin:5px;box-shadow: 0px 0px 3px rgb(150 150 150);">
+                                    <a href="/home?action=detail&id=${product.getId()}"><img
+                                            style="width: 200px;height: 200px; object-fit: contain"
+                                            src="${product.getImage()}" alt=""/></a>
+                                    <h2>${product.getName_product()}</h2>
+                                    <div class="price-details">
+                                        <div class="price-number">
+                                            <p><span class="rupees">$${product.getPrice()}</span></p>
+                                        </div>
+                                        <div class="add-cart">
+                                            <h4><a href="/home?action=detail&id=${product.getId()}">Add to Cart</a></h4>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+
                                 </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="grid_1_of_4 images_1_of_4">
-                            <a href="#"><img src="images/new-pic2.jpg" alt=""></a>
-                            <div class="price" style="border:none">
-                                <div class="add-cart" style="float:none">
-                                    <h4><a href="#">Add to Cart</a></h4>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="grid_1_of_4 images_1_of_4">
-                            <a href="#"><img src="images/new-pic4.jpg" alt=""></a>
-                            <div class="price" style="border:none">
-                                <div class="add-cart" style="float:none">
-                                    <h4><a href="#">Add to Cart</a></h4>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="grid_1_of_4 images_1_of_4">
-                            <img src="images/new-pic3.jpg" alt="">
-                            <div class="price" style="border:none">
-                                <div class="add-cart" style="float:none">
-                                    <h4><a href="#">Add to Cart</a></h4>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
@@ -317,7 +341,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.......</p>
                         <div class="signup">
                             <form>
-                                <input type="text" value="E-mail address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address';"><input type="submit" value="Sign up">
+                                <input type="text" value="E-mail address" onfocus="this.value = '';"
+                                       onblur="if (this.value == '') {this.value = 'E-mail address';"><input
+                                    type="submit" value="Sign up">
                             </form>
                         </div>
                     </div>
@@ -345,7 +371,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </li>
                                     <li>
                                         <input type="radio" name="vote" class="radio" value="6">
-                                        <span class="label"><label for="vote_6">30-day Money Back Guarantee </label></span>
+                                        <span class="label"><label
+                                                for="vote_6">30-day Money Back Guarantee </label></span>
                                     </li>
                                     <li>
                                         <input type="radio" name="vote" class="radio" value="7">
@@ -402,11 +429,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="social-icons">
                     <h4>Follow Us</h4>
                     <ul>
-                        <li><a href="#" target="_blank"><img src="images/facebook.png" alt="" /></a></li>
-                        <li><a href="#" target="_blank"><img src="images/twitter.png" alt="" /></a></li>
-                        <li><a href="#" target="_blank"><img src="images/skype.png" alt="" /> </a></li>
-                        <li><a href="#" target="_blank"> <img src="images/dribbble.png" alt="" /></a></li>
-                        <li><a href="#" target="_blank"> <img src="images/linkedin.png" alt="" /></a></li>
+                        <li><a href="#" target="_blank"><img src="images/facebook.png" alt=""/></a></li>
+                        <li><a href="#" target="_blank"><img src="images/twitter.png" alt=""/></a></li>
+                        <li><a href="#" target="_blank"><img src="images/skype.png" alt=""/> </a></li>
+                        <li><a href="#" target="_blank"> <img src="images/dribbble.png" alt=""/></a></li>
+                        <li><a href="#" target="_blank"> <img src="images/linkedin.png" alt=""/></a></li>
                         <div class="clear"></div>
                     </ul>
                 </div>
@@ -418,8 +445,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $().UItoTop({ easingType: 'easeOutQuart' });
+    $(document).ready(function () {
+        $().UItoTop({easingType: 'easeOutQuart'});
 
     });
 </script>

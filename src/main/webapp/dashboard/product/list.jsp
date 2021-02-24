@@ -413,7 +413,6 @@
                                                         $("#exampleModalLabelX").html('Bạn có muốn xóa sản phẩm có id = ' + id + '?')
                                                         $('#idForDelete').val(id)
                                                     }
-
                                                     function deleteProduct() {
                                                         window.location.href = '/dashboard/product?action=delete&id=' + $('#idForDelete').val();
                                                     }

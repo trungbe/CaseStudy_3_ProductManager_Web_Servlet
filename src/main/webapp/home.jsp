@@ -41,7 +41,7 @@
         </div>
         <div class="header_top">
             <div class="logo">
-                <a href="home.jsp"><img src="/0images/logo.png" alt=""/></a>
+                <a href="/home"><img src="images/logo.png" alt=""/></a>
             </div>
             <div class="cart">
                 <p>Welcome to our Online Store! <span>Cart:</span>
