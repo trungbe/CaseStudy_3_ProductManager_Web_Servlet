@@ -134,13 +134,7 @@
                 </form>
 
                 <!-- Topbar Create -->
-                <form>
-                    <div class="input-group-append">
-                        <a class="btn btn-primary" href="add-product.html" type="button">
-                            <i class="fas fa-plus-circle"></i>
-                        </a>
-                    </div>
-                </form>
+
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -211,6 +205,13 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
+                <form>
+                    <div class="input-group-append">
+                        <a class="btn btn-primary" href="/dashboard/product?action=create" type="button">
+                            <i class="fas fa-plus-circle"></i>
+                        </a>
+                    </div>
+                </form>
                 <h1 class="h3 mb-2 text-gray-800">List Product</h1>
 
                 <!-- DataTales  -->
@@ -259,22 +260,27 @@
                                         <td><a data-toggle="modal" data-target="#exampleModal1"
                                                class="btn btn-danger">Delete</a></td>
                                     </tr>
-                                    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal1" role="dialog"
+                                    <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade"
+                                         id="exampleModal1" role="dialog"
                                          tabindex="-1">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Bạn có muốn xóa?</h5>
-                                                    <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                                    <button aria-label="Close" class="close" data-dismiss="modal"
+                                                            type="button">
                                                         <span aria-hidden="true">×</span>
                                                     </button>
                                                 </div>
-                                                <div class="modal-body">Xin mời lựa chọn</div>
+<%--                                                <div class="modal-body">Xin mời lựa chọn</div>--%>
                                                 <div class="modal-footer">
-                                                    <button class="btn btn-secondary" data-dismiss="modal" type="button"><i class="fas fa-window-close"></i>
+                                                    <button class="btn btn-secondary" data-dismiss="modal"
+                                                            type="button"><i class="fas fa-window-close"></i>
                                                     </button>
                                                     <button class="btn btn-primary"
-                                                            onclick="deleteProduct(${product.getId()})" type="button"><i class="fas fa-trash-alt"></i></button>
+                                                            onclick="deleteProduct(${product.getId()})" type="button"><i
+                                                            class="fas fa-trash-alt"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -411,11 +417,10 @@
 <script src="list-edit-del-product.js"></script>
 <script src="../login/login.js"></script>
 <script>
-    function deleteProduct(id){
-        window.location.href = '/dashboard/product?action=delete&id='+id;
+    function deleteProduct(id) {
+        window.location.href = '/dashboard/product?action=delete&id=' + id;
     }
 </script>
-
 
 
 </body>

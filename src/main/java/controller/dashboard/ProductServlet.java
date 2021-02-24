@@ -42,7 +42,7 @@ public class ProductServlet extends HttpServlet {
         String name= request.getParameter("name_product");
         List<Product>products= serviceProduct.findByName(name);
         request.setAttribute("p",products);
-        RequestDispatcher requestDispatcher=request.getRequestDispatcher("/product/list.jsp");
+        RequestDispatcher requestDispatcher=request.getRequestDispatcher("product/list.jsp");
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -113,7 +113,7 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
-        RequestDispatcher requestDispatcher= request.getRequestDispatcher("product/create.jsp");
+        RequestDispatcher requestDispatcher= request.getRequestDispatcher("product/createProduct.jsp");
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -179,13 +179,11 @@ public class ProductServlet extends HttpServlet {
         String image=request.getParameter("image");
         Product product=new Product(name_product,price,origin,description,image);
         serviceProduct.save(product);
-        RequestDispatcher requestDispatcher=request.getRequestDispatcher("product/create.jsp");
         try {
-            requestDispatcher.forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
+            response.sendRedirect("/dashboard/product");
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }
