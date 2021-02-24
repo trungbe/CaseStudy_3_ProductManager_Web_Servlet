@@ -67,7 +67,6 @@ public class ProductServlet extends HttpServlet {
 
     private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) {
 //        int id= Integer.parseInt(request.getParameter("id"));
-//        Product product= serviceProduct.findById(id);
 //        RequestDispatcher requestDispatcher;
 //        if (product==null){
 //            requestDispatcher =request.getRequestDispatcher("404.jsp");
@@ -83,9 +82,9 @@ public class ProductServlet extends HttpServlet {
 //            }
 //        }
         int id=Integer.parseInt(request.getParameter("id"));
+        serviceProduct.findById(id);
         serviceProduct.delete(id);
         try {
-
             response.sendRedirect("/dashboard/product");
         } catch (IOException e) {
             e.printStackTrace();

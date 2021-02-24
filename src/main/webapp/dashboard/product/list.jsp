@@ -274,17 +274,11 @@
                                                     <button class="btn btn-secondary" data-dismiss="modal" type="button"><i class="fas fa-window-close"></i>
                                                     </button>
                                                     <button class="btn btn-primary"
-                                                            onclick="deleteProduct()" type="button"><i class="fas fa-trash-alt"></i></button>
+                                                            onclick="deleteProduct(${product.getId()})" type="button"><i class="fas fa-trash-alt"></i></button>
                                                 </div>
-                                                <script>
-                                                    function deleteProduct(){
-                                                        window.location.href = '/dashboard/product?action=delete&id=${product.getId()}';
-                                                    }
-                                                </script>
                                             </div>
                                         </div>
                                     </div>
-
                                 </c:forEach>
                                 </tbody>
                             </table>
@@ -413,22 +407,15 @@
 <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="../../js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="../../js/demo/datatables-demo.js"></script>
-<!-- scripts -->
-<script src="product-Class.js"></script>
 <script src="validate-form.js"></script>
 <script src="list-edit-del-product.js"></script>
 <script src="../login/login.js"></script>
+<script>
+    function deleteProduct(id){
+        window.location.href = '/dashboard/product?action=delete&id='+id;
+    }
+</script>
+
 
 
 </body>
