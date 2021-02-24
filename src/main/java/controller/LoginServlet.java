@@ -1,8 +1,11 @@
 package controller;
 
+import model.Product;
 import model.User;
 import service.login.ILoginService;
 import service.login.LoginService;
+import service.product.IProductService;
+import service.product.ProductService;
 
 
 import javax.servlet.RequestDispatcher;
@@ -12,12 +15,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 
 public class LoginServlet extends HttpServlet {
     private static final ILoginService loginService = new LoginService();
-
+    IProductService serviceProduct = new ProductService();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -62,9 +66,9 @@ public class LoginServlet extends HttpServlet {
     private void login(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        List<Product> products = serviceProduct.findAll();
+        request.setAttribute("p", products);
         User user = loginService.login(username, password);
-
-
         if (user == null) {
             response.sendRedirect("/login");
         }

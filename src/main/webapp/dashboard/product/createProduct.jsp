@@ -9,7 +9,7 @@
     <meta content="" name="description">
     <meta content="" name="author">
 
-    <title>Thêm sản phẩm</title>
+    <title>Create Product</title>
 
     <!-- Custom fonts for this template -->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,7 +41,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fab fa-phoenix-framework"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">QUẢN LÍ BÁN HÀNG</div>
+            <div class="sidebar-brand-text mx-3">Product Manager</div>
         </a>
 
         <!-- Divider -->
@@ -330,7 +330,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-<%--                <h1 class="h3 mb-2 text-gray-800">Create Product</h1>--%>
+                <%--                <h1 class="h3 mb-2 text-gray-800">Create Product</h1>--%>
 
                 <div class="card shadow mb-4">
                     <div class="card-body">

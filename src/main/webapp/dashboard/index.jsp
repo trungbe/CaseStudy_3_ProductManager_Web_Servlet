@@ -7,7 +7,7 @@
     <meta content="" name="description">
     <meta content="" name="author">
 
-    <title>QUẢN LÍ BÁN HÀNG</title>
+    <title>Product Manager</title>
 <%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/vendor/fontawesome-free/css/all.min.css" />--%>
     <!-- Custom fonts for this template-->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
