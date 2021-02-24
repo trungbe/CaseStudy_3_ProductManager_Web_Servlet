@@ -22,7 +22,9 @@
 
     <!-- Custom styles for this page -->
     <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+          crossorigin="anonymous"/>
 
 </head>
 
@@ -65,7 +67,8 @@
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed" data-target="#collapsePages"
+            <a aria-controls="collapsePages" aria-expanded="true" class="nav-link collapsed"
+               data-target="#collapsePages"
                data-toggle="collapse" href="#">
                 <i class="fas fa-fw fa-folder"></i>
                 <span>Pages</span>
@@ -127,7 +130,7 @@
                 <!-- Topbar Search -->
                 <form>
                     <div class="input-group-append">
-                        <a class="btn btn-primary" href="list-edit-del-product.html" type="button">
+                        <a class="btn btn-primary" href="/dashboard/product" type="button">
                             <i class="fas fa-undo"></i>
                         </a>
                     </div>
@@ -327,63 +330,69 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Create Product</h1>
+<%--                <h1 class="h3 mb-2 text-gray-800">Create Product</h1>--%>
 
                 <div class="card shadow mb-4">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table cellspacing="0" class="table table-bordered" id="dataTable" width="100%">
-                                <br>
-                                <div class="col-lg-6">
-                                    <input class="form-control form-control-user" id="name-product"
-                                           placeholder="Name" required type="text">
-                                    <div id="name-invalid" style="color: red; font-size: small;"></div>
-                                </div>
-                                <br>
-                                <div class="col-lg-6">
-                                    <input class="form-control form-control-user" id="image-product"
-                                           placeholder="Image" required type="text">
-                                    <div id="image-invalid" style="color: red; font-size: small;"></div>
-                                </div>
-                                <br>
-                                <div class="col-lg-6">
-                                    <input class="form-control form-control-user" id="quantity-product"
-                                           placeholder="Quantity" required type="number">
-                                    <div id="quantity-invalid" style="color: red; font-size: small;"></div>
-                                </div>
-                                <br>
-                                <div class="col-lg-6">
-                                    <input class="form-control form-control-user" id="price-product"
-                                           placeholder="Price" required type="number">
-                                    <div id="price-invalid" style="color: red; font-size: small;"></div>
-                                </div>
-                                <br>
-                                <div class="col-lg-6">
-
-                                    <select class="form-control form-control-user" id="origin-product"
-                                            placeholder="Origin">
-                                        <option>Origin</option>
-                                        <option>Viet Nam</option>
-                                        <option>French</option>
-                                        <option>USA</option>
-                                        <option>England</option>
-                                    </select>
-                                    <div id="origin-invalid" style="color: red; font-size: small;"></div>
-                                </div>
-                                <br>
-                                <div class="col-lg-6">
-                                        <textarea class="form-control form-control-user" id="describe-product"
-                                                  placeholder="Describe" required rows="3"></textarea>
-                                    <div id="describe-invalid" style="color: red; font-size: small;"></div>
-                                </div>
-                                <br>
-                                <div class="col-lg-6">
-                                    <button class="btn btn-primary" onclick="addNewProduct()" style="float: left;"
-                                            target="_blank" >
-                                        <i class="far fa-save"></i>
-                                    </button>
-                                </div>
-                            </table>
+                            <form method="post">
+                                <table cellspacing="0" class="table table-bordered" id="dataTable" width="100%">
+                                    <%--                                <br>--%>
+                                    <%--                                <div class="col-lg-6">--%>
+                                    <%--                                    <h2>Id</h2>--%>
+                                    <%--                                    <input class="form-control form-control-user" value="${p.getId()}"--%>
+                                    <%--                                           required type="text" readonly>--%>
+                                    <%--                                    <div id="name-invalid" style="color: red; font-size: small;"></div>--%>
+                                    <%--                                </div>--%>
+                                    <br>
+                                    <div class="col-lg-6">
+                                        <h2>Name</h2>
+                                        <input class="form-control form-control-user"
+                                               required type="text" name="name_product">
+                                        <div id="name-invalid" style="color: red; font-size: small;"></div>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-6">
+                                        <h2>Price</h2>
+                                        <input class="form-control form-control-user"
+                                               required type="number" name="price">
+                                        <div id="price-invalid" style="color: red; font-size: small;"></div>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-6">
+                                        <h2>Origin</h2>
+                                        <select class="form-control form-control-user" name="origin">
+                                            <option>Origin</option>
+                                            <option>Viet Nam</option>
+                                            <option>French</option>
+                                            <option>USA</option>
+                                            <option>England</option>
+                                        </select>
+                                        <div id="origin-invalid" style="color: red; font-size: small;"></div>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-6">
+                                        <h2>Description</h2>
+                                        <input class="form-control form-control-user"
+                                               required type="text" name="description">
+                                        <div id="describe-invalid" style="color: red; font-size: small;"></div>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-6">
+                                        <h2>Image</h2>
+                                        <input class="form-control form-control-user"
+                                               required type="text" name="image">
+                                        <div id="image-invalid" style="color: red; font-size: small;"></div>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-6">
+                                        <button class="btn btn-primary" type="submit" style="float: left;"
+                                                target="_blank">
+                                            <i class="far fa-save"></i>
+                                        </button>
+                                    </div>
+                                </table>
+                            </form>
                         </div>
                     </div>
                 </div>

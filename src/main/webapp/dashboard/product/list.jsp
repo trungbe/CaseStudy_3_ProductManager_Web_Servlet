@@ -331,9 +331,15 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
+                <form>
+                    <div class="input-group-append">
+                        <a class="btn btn-primary" href="/dashboard/product?action=create" type="button">
+                            <i class="fas fa-plus-circle"></i>
+                        </a>
+                    </div>
+                </form>
                 <h1 class="h3 mb-2 text-gray-800">List Product</h1>
 
-                <!-- DataTales  -->
                 <div class="card shadow mb-4">
                     <div class="card-body">
                         <div class="table-responsive">
